@@ -120,7 +120,7 @@ jegan@tektutor.org:~/devops-nov-2023/Day1/hello/target/classes$ java org.tektuto
 Hello World! 
 </pre>
 
-## Lab - Deleting target and subfolder via maven
+## Lab - Deleting target and subfolders via maven
 ```
 cd ~/devops-nov-2023
 git pull
