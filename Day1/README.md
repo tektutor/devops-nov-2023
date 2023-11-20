@@ -152,3 +152,16 @@ jegan@tektutor.org:~/devops-nov-2023/Day1/hello$ mvn clean
 jegan@tektutor.org:~/devops-nov-2023/Day1/hello$ ls
 pom.xml  src 
 </pre>
+
+## Lab - Packaging application binaries into a jar file for the hello maven project
+```
+cd ~/devops-nov-2023
+git pull
+cd Day1/hello
+mvn package
+cd target
+ls
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/8a7baca3-dbab-453f-ae01-5bb2eecbe699)
