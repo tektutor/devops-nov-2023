@@ -17,4 +17,12 @@
 			<version>4.12</version>
 		</dependency>
 	</dependencies>
+
+
+	<distributionManagement>
+		<repository>
+			<id>jfrog</id>
+			<url>http://localhost:8082/artifactory/tektutor/</url>
+		</repository>
+	</distributionManagement>
 </project>
