@@ -14,6 +14,14 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fa729e2e-bb30-4cc3-9db0-38ee22d3925e)
 
 
+## Launching JFrog Artifactory Server as a Docker Container
+```
+docker run --name artifactory -p 8081-8082:8081-8082 -d releases-docker.jfrog.io/jfrog/artifactory-oss:latest
+```
+
+Expected output
+
+
 ## What is DevOps?
 - end to end automation that helps detects bugs as soon as it is injected
 - is an engineering process to detect bugs early before the software product goes to production
