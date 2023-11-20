@@ -41,4 +41,4 @@ https://app.mymapit.in/code4/tiny/G9V8bV
 
 ## For any lab access issues
 - Report to RPS Consulting PVT LTD user logged in via WebEx chat
-- In case, you don't have access to WebEx chat, shortly they will share their contact info, please feel free to reach out to that contact number for any lab issues during this 4 days
+- In case, you don't have access to WebEx chat, shortly they will share their contact info, please feel free to reach out to that contact number for any lab issues during this 5 days
