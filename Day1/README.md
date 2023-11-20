@@ -644,5 +644,6 @@ Ops
   - any project has to named in terms of Maven co-ordinates
 - Maven convention Over Configuration
   - 80-20 Principle
- 
-  - 
+  - when maven conventions are followed with zero to minimum configurations we can create and build projects
+  - when we can't follow maven conventions, we need to perform configurations
+
