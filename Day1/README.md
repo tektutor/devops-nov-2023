@@ -213,3 +213,16 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/35192584-0bb0-422d-8252-cbca31ff4a8f)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6703d1ce-66bd-4c7c-9ede-d44b74e31e35)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/0129966d-7bb5-493f-89da-99ee0904635d)
+
+
+## Lab - Finding lifecycle phases of clean and site
+```
+cd ~/devops-nov-2023
+git pull
+cd Day1/hello
+mvn help:describe -Dcmd=clean
+mvn help:describe -Dcmd=site
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/8ab0313d-fa2c-40d5-858b-4fc51d67ae55)
