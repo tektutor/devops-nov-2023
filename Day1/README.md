@@ -621,5 +621,9 @@ Ops
 - the team members would be committing code several time a day, i.e as soon as they implemented a code that is unit-testable they shoudl integrate their code with existing code by merging their changes to dev-branch
 
 ## What is Continuous Deployment (CD)?
+- QA Test automation
+- CI built application binaries are automatically deployed on the QA environment for further test automation 
 
 ## What is Continuous Delivery (CD)?
+- The QA certified application binaries will be automatically delivered to Customer's environment or in some cases made live in production(automatically)
+- optionally manual approvals could be included before the application is made live or delivered to customer's environment
