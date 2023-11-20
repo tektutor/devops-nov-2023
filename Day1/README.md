@@ -200,6 +200,16 @@ mvn help:describe -Dcmd=compile
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fbd9bd0d-8ab9-4061-bd78-5b2431e0cc0f)
 
-More about maven lifecycle
-<pre>
-</pre>
+
+## Lab - Installation hello application jar into Maven Local Repository
+```
+cd ~/devops-nov-2023
+git pull
+cd Day1/hello
+mvn install
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/35192584-0bb0-422d-8252-cbca31ff4a8f)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6703d1ce-66bd-4c7c-9ede-d44b74e31e35)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/0129966d-7bb5-493f-89da-99ee0904635d)
