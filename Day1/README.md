@@ -39,6 +39,26 @@ username - admin
 password - password
 </pre>
 
+Once you logged in to JFrog Artifactory, it looks as shown below
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/4c3a2f8e-14dd-4548-92d0-ea3f29349505)
+
+Click on "Get Started"
+
+Then it prompts for changing the password, I would suggest you give Rps@12345 as the password.
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/2fab005f-71c0-40e3-a6c7-f023bff9aad3)
+
+Click "Next"
+
+Click "Skip" for SET BASE URL
+
+Click "Skip" for CONFIGURE DEFAULT PROXY
+
+Click "Skip" for CREATE REPOSITORIES
+
+Click "Finish"
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/3522bb4e-a951-42cb-9b38-beee6c64c421)
+
 ## What is DevOps?
 - end to end automation that helps detects bugs as soon as it is injected
 - is an engineering process to detect bugs early before the software product goes to production
