@@ -577,6 +577,9 @@ Build Tools
 - MSBuild - Dot Net based projects
 
 Build Servers ( Web Servers - can be accessed over Internet via web browsers )
+- detects code commites done in Version Controls
+- once it detects code changes, it automatically triggers builds
+- to actually compile and run test cases, it would depends on Build Tools like Make, Maven, MSBuild etc.,
 - Jenkins, Cloudbees, TeamCity, Bamboo, etc.
 - It is capable running maven, ant, c++ application, msbuild (.net ) application builds
 
