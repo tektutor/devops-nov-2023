@@ -11,6 +11,7 @@ docker images
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/a3f2e837-cac0-45eb-b8e8-bab1f14ec0d6)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fa729e2e-bb30-4cc3-9db0-38ee22d3925e)
 
 
 ## What is DevOps?
