@@ -28,7 +28,7 @@ https://medium.com/@jegan_50867/docker-commands-ba19387383b4
 </pre>
 
 
-## Pre-test URL for Openshift training
+## Pre-test URL for DevOps training
 
 - Kindly login to your RPS Lab Machine right away and start the test
 - Once you are done with the pre-test leave a message via WebEx chat
