@@ -342,3 +342,17 @@ mvn help:describe -Dcmd=site
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/8ab0313d-fa2c-40d5-858b-4fc51d67ae55)
+
+
+## Lab - Deploying hello application binary artifacts into JFrog Artifactory
+```
+cd ~/devops-nov-2023
+git pull
+cd Day1/hello
+mvn deploy
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6b0f0b29-c541-412a-911b-729d9ff62b0e)
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/dba3efab-d834-47d2-84a3-843cca0af57a)
