@@ -569,3 +569,54 @@ Java version: 17.0.9-ea, vendor: Private Build, runtime: /usr/lib/jvm/java-17-op
 Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "6.5.0-10-generic", arch: "amd64", family: "unix" 
 </pre>
+
+## DevOps Tools
+Build Tools
+- CMake/Makefile - C/C++ based applications
+- Ant/Maven/Gradle - Java based projects
+- MSBuild - Dot Net based projects
+
+Build Servers ( Web Servers - can be accessed over Internet via web browsers )
+- Jenkins, Cloudbees, TeamCity, Bamboo, etc.
+- It is capable running maven, ant, c++ application, msbuild (.net ) application builds
+
+Version Control Tools
+- Git/GitHub, BitBucket, Perforce, etc
+
+- Configuration Tools
+  - Ansible, Puppet, Chef and Salt
+
+- Infrastructure Automation Tools
+  - Cloudformation, Terraform, etc.,
+
+- Container Tools
+  - Docker, Podman, etc.,
+ 
+- Orchestration Tools
+  - Docker SWARM
+  - Kubernetes
+  - OpenShift
+
+## What is DevOps?
+- end to end automation that helps detects bugs as soon as it is injected
+- is an engineering process to detect bugs early before the software product goes to production
+- helps in delivering our product confidently and frequently
+- Dev + Ops ( Dev - Development Team + QA Team, Ops - Operations Team )
+
+Developers - automating unit/integration testing using Test Automation Frameworks
+QA - automating function/api/component/load/stress/performance/regression/smoke, etc using BDD frameworks like Cucumber, Specflow, etc
+Ops 
+ - automate software installation/uninstallation/software upgrades/updates
+   - eg: Configuration Management Tools ( Ansible, Puppet, Chef and Salt/Saltstack )
+ - infrastructure automation
+   - eg: Cloudformation, Terraform
+
+
+## What is Continuous Integration (CI)?
+- on code-commit, automatically the modified code is pulled by Jenkins and it triggers build and runs unit/integration test cases
+- shares build and test reports by email in about 30~45 minutes post the code commit automatically
+- the team members would be committing code several time a day, i.e as soon as they implemented a code that is unit-testable they shoudl integrate their code with existing code by merging their changes to dev-branch
+
+## What is Continuous Deployment (CD)?
+
+## What is Continuous Delivery (CD)?
