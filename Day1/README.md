@@ -1,5 +1,18 @@
 # Day1
 
+## Installing Docker in Ubuntu
+```
+sudo apt install -y docker.io
+sudo usermod -aG docker $USER
+sudo su $USER
+docker --version
+docker images
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/a3f2e837-cac0-45eb-b8e8-bab1f14ec0d6)
+
+
 ## What is DevOps?
 - end to end automation that helps detects bugs as soon as it is injected
 - is an engineering process to detect bugs early before the software product goes to production
