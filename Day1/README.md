@@ -17,6 +17,10 @@ Expected output
 ## Launching JFrog Artifactory Server as a Docker Container
 ```
 docker run --name artifactory -p 8081-8082:8081-8082 -d releases-docker.jfrog.io/jfrog/artifactory-oss:latest
+
+docker images
+
+docker ps
 ```
 
 Expected output
