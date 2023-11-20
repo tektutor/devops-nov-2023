@@ -20,6 +20,7 @@ docker run --name artifactory -p 8081-8082:8081-8082 -d releases-docker.jfrog.io
 ```
 
 Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e28b8fde-0176-4666-ad88-4f59813972d4)
 
 
 ## What is DevOps?
