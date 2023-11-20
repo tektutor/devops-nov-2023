@@ -101,6 +101,14 @@ In case you wish to copy/paste
 </server>
 ```
 
+Checking if the credentials we updated are picked up by maven
+```
+mvn help:effective-settings
+```
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/87020107-71b6-44b7-b6b8-a06791d8056b)
+
+
 ## What is DevOps?
 - end to end automation that helps detects bugs as soon as it is injected
 - is an engineering process to detect bugs early before the software product goes to production
