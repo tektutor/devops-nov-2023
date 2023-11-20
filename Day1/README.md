@@ -59,6 +59,28 @@ Click "Finish"
 
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/3522bb4e-a951-42cb-9b38-beee6c64c421)
 
+Click on "Create a Repository" button
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/c646fd30-fece-4a21-9780-9dc65b8f14a6)
+
+Click on "Add Repository-->Local Repository" as shown below
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/1f138ffb-46bf-42ae-9244-b8d770cdf0a1)
+
+
+You are expected to see the below page
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/b7b61a10-5869-4c81-9b6d-e7bd880845dd)
+
+In the above page, select Maven
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/b03a7be2-0a33-424e-8e0e-a0105772ae84)
+
+Type tektutor as the Repository key as shown below
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/38f48f75-d922-409f-aace-c41a86be9a85)
+
+Click on Create Local Repository button
+
+We don't need to add additional users, hence close the add user window.
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/9f3ba87c-b61d-4e93-8d0a-48f644605eef)
+
 ## What is DevOps?
 - end to end automation that helps detects bugs as soon as it is injected
 - is an engineering process to detect bugs early before the software product goes to production
