@@ -190,6 +190,8 @@ Hello World!
 </pre>
 
 #### Maven Default Lifecycle
+
+
 Finding all the phases that are part of Maven default lifecycle
 ```
 cd ~/devops-nov-2023
@@ -202,6 +204,8 @@ Expected output
 
 
 ## Lab - Installing hello application jar into Maven Local Repository
+We have to be in a maven project folder to execute the maven install command as it is project specific command.
+
 ```
 cd ~/devops-nov-2023
 git pull
@@ -216,6 +220,9 @@ Expected output
 
 
 ## Lab - Finding lifecycle phases of clean and site
+
+It is not required to be inside some valid maven project to list the maven life-cycle phases.
+
 ```
 cd ~/devops-nov-2023
 git pull
