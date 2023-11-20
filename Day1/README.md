@@ -172,3 +172,32 @@ classes  generated-sources  generated-test-sources  hello-1.0.0.jar  maven-archi
 jegan@tektutor.org:~/devops-nov-2023/Day1/hello/target$ java -cp hello-1.0.0.jar org.tektutor.Hello
 Hello World! 
 </pre>
+
+## Maven Life cycle
+<pre>
+- it is complex command that runs one or more life cycle phases
+- Maven supports 3 life cycles ( default, clean and site )
+- Each lifecycle supports one or more Phases
+- Each Phase can be configured to invoke one or more Maven Plugins
+- Each Maven Plugin supports one or more Goals
+- Each Plugin Goal does one activity 
+  - Examples
+    - maven-compiler-plugin's compile goal ( compiles application source files kept under src/main/java and its subfolders )
+    - maven-compiler-plugin's testCompile goal ( compiles test source files kept under src/test/java and it subfolders )
+</pre>
+
+#### Maven Default Lifecycle
+Finding all the phases that are part of Maven default lifecycle
+```
+cd ~/devops-nov-2023
+git pull
+cd Day1/hello
+mvn help:describe -Dcmd=compile
+```
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fbd9bd0d-8ab9-4061-bd78-5b2431e0cc0f)
+
+More about maven lifecycle
+<pre>
+- supports total 23 phases 
+</pre>
