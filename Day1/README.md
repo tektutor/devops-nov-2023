@@ -33,6 +33,11 @@ http://localhost:8081
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/b4e2c891-6bc7-43df-bd03-a34751e702fa)
 
+Default Login Credentials
+<pre>
+username - admin
+password - password
+</pre>
 
 ## What is DevOps?
 - end to end automation that helps detects bugs as soon as it is injected
