@@ -81,6 +81,26 @@ Click on Create Local Repository button
 We don't need to add additional users, hence close the add user window.
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/9f3ba87c-b61d-4e93-8d0a-48f644605eef)
 
+
+Configuring Maven settings.xml to enable access to JFrog Artifactory Server
+
+We can find the Maven settings.xml file location with the help of
+```
+mvn --version
+```
+
+We need to edit /home/rps/Downloads/apache-maven-3.9.5/conf/settings.xml and add the JFrog server credentials as shown below
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7fe5e1eb-4049-4a3f-830e-86f2a78025eb)
+
+In case you wish to copy/paste
+```
+<server>       
+   <id>jfrog</id>      
+   <username>admin</username>
+   <password>Rps@12345</password>
+</server>
+```
+
 ## What is DevOps?
 - end to end automation that helps detects bugs as soon as it is injected
 - is an engineering process to detect bugs early before the software product goes to production
