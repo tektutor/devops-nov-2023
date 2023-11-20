@@ -177,6 +177,9 @@ Hello World!
 <pre>
 - it is complex command that runs one or more life cycle phases
 - Maven supports 3 life cycles ( default, clean and site )
+- Maven default lifecycle supports 23 Phases
+- Maven clean lifecycle supports 3 phases
+- Maven site lifecycle supports 4 phases
 - Each lifecycle supports one or more Phases
 - Each Phase can be configured to invoke one or more Maven Plugins
 - Each Maven Plugin supports one or more Goals
@@ -199,5 +202,4 @@ Expected output
 
 More about maven lifecycle
 <pre>
-- supports total 23 phases 
 </pre>
