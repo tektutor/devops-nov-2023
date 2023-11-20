@@ -26,6 +26,13 @@ docker ps
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e28b8fde-0176-4666-ad88-4f59813972d4)
 
+#### Accessing JFrog Artifactory dashboard
+```
+http://localhost:8081
+```
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/b4e2c891-6bc7-43df-bd03-a34751e702fa)
+
 
 ## What is DevOps?
 - end to end automation that helps detects bugs as soon as it is injected
