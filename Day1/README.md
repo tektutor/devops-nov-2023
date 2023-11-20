@@ -91,3 +91,31 @@ jegan@tektutor.org:~/devops-nov-2023/Day1/hello$ mvn compile
 [INFO] Finished at: 2023-11-20T14:54:37+05:30
 [INFO] ------------------------------------------------------------------------ 
 </pre>
+
+## Lab - Running the hello java project compiled by Maven
+```
+cd ~/devops-nov-2023/Day1/hello
+ls
+cd target/classes/
+ls
+tree
+java org.tektutor.Hello
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/devops-nov-2023/Day1/hello$ ls
+pom.xml  src  target
+jegan@tektutor.org:~/devops-nov-2023/Day1/hello$ cd target/classes/
+jegan@tektutor.org:~/devops-nov-2023/Day1/hello/target/classes$ ls
+org
+jegan@tektutor.org:~/devops-nov-2023/Day1/hello/target/classes$ tree
+.
+└── org
+    └── tektutor
+        └── Hello.class
+
+3 directories, 1 file
+jegan@tektutor.org:~/devops-nov-2023/Day1/hello/target/classes$ java org.tektutor.Hello
+Hello World! 
+</pre>
