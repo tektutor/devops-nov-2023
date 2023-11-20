@@ -201,7 +201,7 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fbd9bd0d-8ab9-4061-bd78-5b2431e0cc0f)
 
 
-## Lab - Installation hello application jar into Maven Local Repository
+## Lab - Installing hello application jar into Maven Local Repository
 ```
 cd ~/devops-nov-2023
 git pull
