@@ -48,7 +48,15 @@ Ops
 
 # Lab Exercises
 
-## Compiling Maven hello project
+## Lab - Cloning the TekTutor Training Repository ( should be done only once )
+```
+cd ~
+git clone https://github.com/tektutor/devops-nov-2023.git
+cd devops-nov-2023
+tree
+```
+
+## Lab - Compiling Maven hello project
 ```
 cd ~/devops-nov-2023
 git pull
