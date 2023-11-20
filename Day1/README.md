@@ -161,7 +161,14 @@ cd Day1/hello
 mvn package
 cd target
 ls
+java -cp hello-1.0.0.jar org.tektutor.Hello
 ```
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/8a7baca3-dbab-453f-ae01-5bb2eecbe699)
+<pre>
+jegan@tektutor.org:~/devops-nov-2023/Day1/hello/target$ ls
+classes  generated-sources  generated-test-sources  hello-1.0.0.jar  maven-archiver  maven-status  surefire-reports  test-classes
+jegan@tektutor.org:~/devops-nov-2023/Day1/hello/target$ java -cp hello-1.0.0.jar org.tektutor.Hello
+Hello World! 
+</pre>
