@@ -119,3 +119,36 @@ jegan@tektutor.org:~/devops-nov-2023/Day1/hello/target/classes$ tree
 jegan@tektutor.org:~/devops-nov-2023/Day1/hello/target/classes$ java org.tektutor.Hello
 Hello World! 
 </pre>
+
+## Lab - Deleting target and subfolder via maven
+```
+cd ~/devops-nov-2023
+git pull
+cd Day1/hello
+tree
+mvn clean
+tree
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/devops-nov-2023/Day1/hello$ ls
+pom.xml  src  target
+jegan@tektutor.org:~/devops-nov-2023/Day1/hello$ mvn clean
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< org.tektutor:hello >-------------------------
+[INFO] Building hello 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ hello ---
+[INFO] Deleting /home/jegan/devops-nov-2023/Day1/hello/target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.078 s
+[INFO] Finished at: 2023-11-20T15:04:46+05:30
+[INFO] ------------------------------------------------------------------------
+jegan@tektutor.org:~/devops-nov-2023/Day1/hello$ ls
+pom.xml  src 
+</pre>
