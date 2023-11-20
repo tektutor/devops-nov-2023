@@ -554,3 +554,18 @@ Setting up maven (3.8.7-1) ...
 update-alternatives: using /usr/share/maven/bin/mvn to provide /usr/bin/mvn (mvn) in auto mode
 Setting up default-jre-headless (2:1.17-74) ...  
 </pre>
+
+## Checking with Maven in Ubuntu
+```
+mvn --version
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~$ mvn --version
+Apache Maven 3.8.7
+Maven home: /usr/share/maven
+Java version: 17.0.9-ea, vendor: Private Build, runtime: /usr/lib/jvm/java-17-openjdk-amd64
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "6.5.0-10-generic", arch: "amd64", family: "unix" 
+</pre>
