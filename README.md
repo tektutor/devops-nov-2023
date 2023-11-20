@@ -37,7 +37,7 @@ https://medium.com/@jegan_50867/docker-commands-ba19387383b4
 - While registering for pre-test, kindly use your personal email-id and avoid using your BOFA id
 - You may find the below pre-test link in the RPS Lab machine
 
-https://app.mymapit.in/code4/tiny/G9V8bV
+https://app.mymapit.in/code4/tiny/8OIM49
 
 ## For any lab access issues
 - Report to RPS Consulting PVT LTD user logged in via WebEx chat
