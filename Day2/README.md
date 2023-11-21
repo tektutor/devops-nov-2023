@@ -58,8 +58,40 @@
 - because containers have network stack, file system, it appears like a OS but technically they are nothing but an application process
 
 ## What is Docker?
-
+- developed and maintained by an organization called Docker Inc
+- Docker is an application virtualization container software
+- Comes in 2 flavours
+  - Docker Community Edition - Docker CE
+  - Docker Enterprise Edition - Docker EE
 
 ## Docker vs Hypervisor
+- Docker container represents one single application
+- Virtual machine represents one fully functional Operating System
+- container is not a OS
+- containers will never be able to replace VMs or Operating System
+- they are complementing technology not competing technology
 
 ## Docker Alternatives
+- Podman
+- Containerd
+- Rkt
+
+## What is a Container Engine ?
+- high-level software that is end-user friendly
+- depends on Container Runtime to manage containers
+- provides easy to use commands, without knowing low-level kernel details, one can easily create and manage container via Container Engine
+- Examples
+  - Docker, Podman, etc.,
+
+### What is a Container Runtime?
+- Container Runtime software is the one which knows how many containers
+  - creating containers
+  - listing container
+  - deleting containers
+  - start/stop/restarting/killing/aborting containers
+- low-level softwares, hence not so end-user friendly
+- normally not used by end-users directly
+- commonly used by Container Engine to manage containers
+- Examples
+  - runC is a Container Runtime used by Docker & Containerd
+  - rkt is Container Runtime used by Podman
