@@ -395,6 +395,6 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/abe37d2d-9cba-4039-a7bf-10f992f0a068)
 
 
-## Day1 Feedback
+## Day1 Training Feedback
 https://tcheck.co/2nyl2b
 
