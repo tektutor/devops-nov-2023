@@ -30,7 +30,10 @@
   - Microsoft Hyper-V
   - Parallels ( Mac OS-X )
   - Opensource KVM ( Linux )
-  
+- The OS that runs with the Virtual Machine (VMs) is a fully functional Operating System
+  - it has it own dedicated Hardware resources ( CPU Cores, RAM, Storage, Network, Graphics Card, etc., )
+  - Hence the number of Virtual Machines we can create on Laptop/Desktop/Workstation/Server depends on the hardware configuration of that machine
+
 ## What is Docker?
 
 ## Docker vs Hypervisor
