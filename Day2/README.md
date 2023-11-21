@@ -237,3 +237,16 @@ CONTAINER ID   IMAGE                                                   COMMAND  
 4378c8c5913a   ubuntu:latest                                           "/bin/bash"              8 minutes ago   Up 8 minutes                                                                               ubuntu1
 99daa08c75be   releases-docker.jfrog.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   23 hours ago    Up 23 hours                0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory  
 </pre>
+
+## Lab - Creating a Custom Docker Image with required software tools
+```
+cd ~/devops-nov-2023
+git pull
+cd Day2/CustomDockerImage
+docker build -t tektutor/ubuntu:latest .
+docker images
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/2efa05c1-3e03-474f-b433-c9c235bca6a3)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/766ca069-d635-4f90-ae57-40baaeafdc1b)
