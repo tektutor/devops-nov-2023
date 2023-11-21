@@ -264,3 +264,26 @@ exit
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/898c3a7c-6dbf-4597-bc8b-96e6601b628e)
+
+
+
+## Lab - Stopping a running container
+```
+docker ps
+docker stop ubuntu3
+docker ps
+docker ps -a
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/1dc1affe-2fd4-45da-a349-d22384bb6efc)
+
+## Lab - Starting a exited container
+```
+docker ps -a
+docker start ubuntu3
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ac31cce0-638d-4981-96a8-52432191dfa8)
