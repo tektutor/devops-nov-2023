@@ -310,3 +310,13 @@ docker ps -a
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/b8e658b2-b81c-4404-aa34-104c64fefa6f)
+
+## Lab - Deleting multiple running containers
+```
+docker ps
+docker stop ubuntu2 ubuntu3
+docker rm ubuntu2 ubuntu3
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/9fbffd86-6ce2-474e-a472-e01f788438de)
