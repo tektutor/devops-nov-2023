@@ -145,3 +145,24 @@ jegan@tektutor.org:~/devops-nov-2023$ docker ps
 CONTAINER ID   IMAGE                                                   COMMAND                  CREATED        STATUS        PORTS                                                           NAMES
 99daa08c75be   releases-docker.jfrog.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   22 hours ago   Up 22 hours   0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory  
 </pre>
+
+
+## Lab - Downloading docker image from Docker Hub Remote Registry to Local docker registry
+```
+docker pull hello-world:latest
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/devops-nov-2023$ docker pull hello-world:latest
+latest: Pulling from library/hello-world
+719385e32844: Pull complete 
+Digest: sha256:c79d06dfdfd3d3eb04cafd0dc2bacab0992ebc243e083cabe208bac4dd7759e0
+Status: Downloaded newer image for hello-world:latest
+docker.io/library/hello-world:latest
+  
+jegan@tektutor.org:~/devops-nov-2023$ docker images
+REPOSITORY                                       TAG       IMAGE ID       CREATED        SIZE
+releases-docker.jfrog.io/jfrog/artifactory-oss   latest    bace876f17f4   2 weeks ago    2.2GB
+hello-world                                      latest    9c7a54a9a43c   6 months ago   13.3kB  
+</pre>
