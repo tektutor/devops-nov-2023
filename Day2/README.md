@@ -287,3 +287,13 @@ docker ps
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ac31cce0-638d-4981-96a8-52432191dfa8)
+
+## Lab - Restarting a running container
+```
+docker ps
+docker restart ubuntu3
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7df4eeb1-292e-4aca-890d-56cefa806add)
