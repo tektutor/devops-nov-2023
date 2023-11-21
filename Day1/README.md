@@ -390,6 +390,10 @@ mvn install
 ```
 
 Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/68f25883-7314-4ce7-8165-a7f1674dda6c)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/71e2d8c0-a6a1-462a-9b2b-433040eac6a2)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/abe37d2d-9cba-4039-a7bf-10f992f0a068)
+
 
 ## Day1 Feedback
 https://tcheck.co/2nyl2b
