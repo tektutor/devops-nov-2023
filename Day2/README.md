@@ -296,4 +296,5 @@ docker ps
 ```
 
 Expected output
-![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7df4eeb1-292e-4aca-890d-56cefa806add)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/90be9e46-3268-4374-8ed0-3202feb6e03a)
+
