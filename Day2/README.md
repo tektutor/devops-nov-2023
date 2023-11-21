@@ -133,3 +133,15 @@ jegan@tektutor.org:~/devops-nov-2023$ docker images
 REPOSITORY                                       TAG       IMAGE ID       CREATED       SIZE
 releases-docker.jfrog.io/jfrog/artifactory-oss   latest    bace876f17f4   2 weeks ago   2.2GB  
 </pre>
+
+## Lab - Listing currently running containers
+```
+docker ps
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/devops-nov-2023$ docker ps
+CONTAINER ID   IMAGE                                                   COMMAND                  CREATED        STATUS        PORTS                                                           NAMES
+99daa08c75be   releases-docker.jfrog.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   22 hours ago   Up 22 hours   0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory  
+</pre>
