@@ -95,3 +95,16 @@
 - Examples
   - runC is a Container Runtime used by Docker & Containerd
   - rkt is Container Runtime used by Podman
+
+## What is a Docker Image?
+- specification or blueprint of a Container
+- using Docker Image we can create one or more containers
+- We can create Docker Image with some software preinstalled, hence we create containers using that Docker Image, the container will have all the softwares that we preinstalled in the Docker Image
+- Docker Images are maintained with Docker Registry
+
+## What is a Docker Container?
+- running instance of a Docker Image
+- Docker Container get its file system and software tools from Docker Image
+- Every Docker Container runs in a separate namespace
+- Every Docker Container gets an IP Address
+- Each Container represents one application
