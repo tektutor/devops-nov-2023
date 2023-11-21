@@ -210,3 +210,30 @@ CONTAINER ID   IMAGE                                                   COMMAND  
 4378c8c5913a   ubuntu:latest                                           "/bin/bash"              21 seconds ago   Up 20 seconds                                                                   ubuntu1
 99daa08c75be   releases-docker.jfrog.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   23 hours ago     Up 23 hours     0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory  
 </pre>
+
+## Lab - Renaming a container
+```
+docker run hello-world:latest
+docker ps -a
+docker rename eager_montalcini c1
+docker ps -a
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/devops-nov-2023$ docker ps -a
+CONTAINER ID   IMAGE                                                   COMMAND                  CREATED          STATUS                      PORTS                                                           NAMES
+2f62aecd7bf8   hello-world:latest                                      "/hello"                 18 seconds ago   Exited (0) 17 seconds ago                                                                   eager_montalcini
+5072f6e712c3   ubuntu:latest                                           "/bin/bash"              5 minutes ago    Up 5 minutes                                                                                ubuntu2
+4378c8c5913a   ubuntu:latest                                           "/bin/bash"              5 minutes ago    Up 5 minutes                                                                                ubuntu1
+99daa08c75be   releases-docker.jfrog.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   23 hours ago     Up 23 hours                 0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory
+  
+jegan@tektutor.org:~/devops-nov-2023$ docker rename eager_montalcini c1
+  
+jegan@tektutor.org:~/devops-nov-2023$ docker ps -a
+CONTAINER ID   IMAGE                                                   COMMAND                  CREATED         STATUS                     PORTS                                                           NAMES
+2f62aecd7bf8   hello-world:latest                                      "/hello"                 2 minutes ago   Exited (0) 2 minutes ago                                                                   c1
+5072f6e712c3   ubuntu:latest                                           "/bin/bash"              7 minutes ago   Up 7 minutes                                                                               ubuntu2
+4378c8c5913a   ubuntu:latest                                           "/bin/bash"              8 minutes ago   Up 8 minutes                                                                               ubuntu1
+99daa08c75be   releases-docker.jfrog.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   23 hours ago    Up 23 hours                0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory  
+</pre>
