@@ -368,3 +368,6 @@ mvn clean compile
 ```
 
 Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e85566d9-4019-4b56-a2c8-929ede5a55d3)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fef7b7bb-1d6f-4d28-880e-6a294534f78c)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/607f13ba-9b39-48bb-b81e-81b8a8f562e1)
