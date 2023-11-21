@@ -250,3 +250,153 @@ docker images
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/2efa05c1-3e03-474f-b433-c9c235bca6a3)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/766ca069-d635-4f90-ae57-40baaeafdc1b)
+
+
+Creating a container using our custom docker image
+```
+docker run -dit --name ubuntu3 --hostname ubuntu3 tektutor/ubuntu:latest /bin/bash
+docker ps
+docker exec -it ubuntu3 /bin/bash
+ifconfig
+ping www.google.com
+exit
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/898c3a7c-6dbf-4597-bc8b-96e6601b628e)
+
+
+
+## Lab - Stopping a running container
+```
+docker ps
+docker stop ubuntu3
+docker ps
+docker ps -a
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/1dc1affe-2fd4-45da-a349-d22384bb6efc)
+
+## Lab - Starting a exited container
+```
+docker ps -a
+docker start ubuntu3
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ac31cce0-638d-4981-96a8-52432191dfa8)
+
+## Lab - Restarting a running container
+```
+docker ps
+docker restart ubuntu3
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/90be9e46-3268-4374-8ed0-3202feb6e03a)
+
+## Lab - Deleting a single running container
+```
+docker ps
+docker rm ubuntu1
+docker stop ubuntu1
+docker rm ubuntu1
+docker ps
+docker ps -a
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/b8e658b2-b81c-4404-aa34-104c64fefa6f)
+
+## Lab - Deleting multiple running containers
+```
+docker ps
+docker stop ubuntu2 ubuntu3
+docker rm ubuntu2 ubuntu3
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/9fbffd86-6ce2-474e-a472-e01f788438de)
+
+## Lab - Deleting multiple containers forcibly without naming them
+```
+docker ps -a
+docker rm -f $(docker ps -aq)
+docker ps -a
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7115ecdb-7720-4c1d-a142-0382c70b27db)
+
+## Lab - Creating a Load Balancer with nginx container image
+```
+docker run -d --name web1 --hostname web1 nginx:latest
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ff3a3c4b-5d67-42a3-b031-8164b4a210a8)
+
+
+Finding IP Address of nginx web1 container
+```
+docker inspect web1 | grep IPA
+docker inspect -f {{.NetworkSettings.IPAddress}} web1
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e744f2be-eb39-4efc-a58f-e33ac84070e4)
+
+Let's create 2 more web container and a single lb container using nginx docker image
+```
+docker ps
+docker run -d --name web2 --hostname web2 nginx:latest
+docker run -d --name web3 --hostname web3 nginx:latest
+docker run -d --name lb --hostname lb nginx:latest
+
+docker inspect -f {{.NetworkSettings.IPAddress}} web2
+docker inspect -f {{.NetworkSettings.IPAddress}} web3
+docker inspect -f {{.NetworkSettings.IPAddress}} lb
+```
+
+Expected ouput
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/3e14dd53-38a6-4840-9a31-a67e7699fbc7)
+
+Accessing the web pages from web1, web2, web3 and lb container
+```
+curl 172.17.0.2:80
+curl 172.17.0.3
+curl 172.17.0.4
+curl 172.17.0.5
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/f14a1df5-7467-45e7-b7cf-003a54e21764)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/4f02db42-f8d9-4ec3-bf36-5e3a3394d5a0)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fde39b20-bc16-4e2e-8c33-c34d27cfa5b1)
+
+Customizing the web pages on web1, web2 and web3 container so that we can differentiate the responses from each web server
+```
+cd ~/devops-nov-2023
+git pull
+cd Day2/lb
+
+echo "Web Server 1" > index.html
+docker cp index.html web1:/usr/share/nginx/html/index.html
+
+echo "Web Server 2" > index.html
+docker cp index.html web2:/usr/share/nginx/html/index.html
+
+echo "Web Server 3" > index.html
+docker cp index.html web3:/usr/share/nginx/html/index.html
+
+curl 172.17.0.2
+curl 172.17.0.3
+curl 172.17.0.4
+```
+
+Expected ouput
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fd5020bb-a3d3-4ade-b97d-2bb0971e01fa)
