@@ -356,3 +356,15 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6b0f0b29-c541-412a-911b-729d9ff62b0e)
 
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/dba3efab-d834-47d2-84a3-843cca0af57a)
+
+## Lab - Building C++ project using Maven build tool
+```
+cd ~/devops-nov-2023
+git pull
+cd Day1/hello-cpp
+mvn compile
+mvn clean
+mvn clean compile
+```
+
+Expected output
