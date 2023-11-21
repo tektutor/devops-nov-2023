@@ -400,3 +400,33 @@ curl 172.17.0.4
 
 Expected ouput
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fd5020bb-a3d3-4ade-b97d-2bb0971e01fa)
+
+Now, let's configure the lb container to work like a Load Balancer. We need to copy the default nginx.conf file present in the lb container to our local machine to configure the file.
+
+Before copying the nginx.conf from devops-nov-2023/Day2/lb folder into the lb container, you need to find the IP addresses of your web1, web2 and web3 container and appropriately configure the nginx.conf with those IPs
+```
+cd ~/devops-nov-2023
+git pull
+cd Day2/lb
+docker cp nginx.conf lb:/etc/nginx/nginx.conf
+```
+
+To apply the config changes, we need to restart the lb container
+```
+docker restart lb
+```
+
+Now you can try accessing the lb container IP address to check if it is working like a load balancer, you need to replace the below IP address with your lb container IP
+```
+http://172.17.0.5
+```
+Try the above from a web browser on the RPS lab machine.
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/8836e8e2-c2b4-41fa-8744-a06fc8ecd85e)
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ce36255e-6b63-47da-9177-d5c3711b6e44)
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d931c09c-752d-431c-bb14-f5467a5765f2)
+
+
