@@ -250,3 +250,17 @@ docker images
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/2efa05c1-3e03-474f-b433-c9c235bca6a3)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/766ca069-d635-4f90-ae57-40baaeafdc1b)
+
+
+Creating a container using our custom docker image
+```
+docker run -dit --name ubuntu3 --hostname ubuntu3 tektutor/ubuntu:latest /bin/bash
+docker ps
+docker exec -it ubuntu3 /bin/bash
+ifconfig
+ping www.google.com
+exit
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/898c3a7c-6dbf-4597-bc8b-96e6601b628e)
