@@ -377,3 +377,26 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/f14a1df5-7467-45e7-b7cf-003a54e21764)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/4f02db42-f8d9-4ec3-bf36-5e3a3394d5a0)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fde39b20-bc16-4e2e-8c33-c34d27cfa5b1)
+
+Customizing the web pages on web1, web2 and web3 container so that differentiate the responses from each web server
+```
+cd ~/devops-nov-2023
+git pull
+cd Day2/lb
+
+echo "Web Server 1" > index.html
+docker cp index.html web1:/usr/share/nginx/html/index.html
+
+echo "Web Server 2" > index.html
+docker cp index.html web2:/usr/share/nginx/html/index.html
+
+echo "Web Server 3" > index.html
+docker cp index.html web3:/usr/share/nginx/html/index.html
+
+curl 172.17.0.2
+curl 172.17.0.3
+curl 172.17.0.4
+```
+
+Expected ouput
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fd5020bb-a3d3-4ade-b97d-2bb0971e01fa)
