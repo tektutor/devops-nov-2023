@@ -430,3 +430,33 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d931c09c-752d-431c-bb14-f5467a5765f2)
 
 
+## Lab - Using port-forwarding to expose lb container service to outside world
+We first need to delete the lb container
+```
+docker ps
+docker rm -f lb
+```
+
+We need to create a new lb container with port-forwarding
+```
+docker run -d --name lb --hostname lb -p 9000:80 nginx:latest
+```
+
+Let's copy the nginx.conf to make lb container a load balancer. You need to update the nginx.conf web1, web2 and web3 containers IP addresses with your web1, web2 and web3 IP addresses
+```
+cd ~/devops-nov-2023
+git pull
+cd Day2/lb
+docker cp nginx.conf lb
+docker restart lb
+docker ps
+```
+
+## Lab - Creating a mysql db container
+```
+docker run -d --name db --hostname db mysql:latest
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/a92a38e2-6ab0-4eaf-a1d9-21d3c5312ff3)
