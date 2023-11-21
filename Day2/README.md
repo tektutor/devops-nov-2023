@@ -330,3 +330,12 @@ docker ps -a
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7115ecdb-7720-4c1d-a142-0382c70b27db)
+
+## Lab - Creating a Load Balancer with nginx container image
+```
+docker run -d --name web1 --hostname web1 nginx:latest
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ff3a3c4b-5d67-42a3-b031-8164b4a210a8)
