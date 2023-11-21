@@ -320,3 +320,13 @@ docker rm ubuntu2 ubuntu3
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/9fbffd86-6ce2-474e-a472-e01f788438de)
+
+## Lab - Deleting multiple containers forcibly without naming them
+```
+docker ps -a
+docker rm -f $(docker ps -aq)
+docker ps -a
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7115ecdb-7720-4c1d-a142-0382c70b27db)
