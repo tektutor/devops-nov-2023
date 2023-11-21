@@ -339,3 +339,13 @@ docker ps
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ff3a3c4b-5d67-42a3-b031-8164b4a210a8)
+
+
+Finding IP Address of nginx web1 container
+```
+docker inspect web1 | grep IPA
+docker inspect -f {{.NetworkSettings.IPAddress}} web1
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e744f2be-eb39-4efc-a58f-e33ac84070e4)
