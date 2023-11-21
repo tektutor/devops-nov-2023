@@ -190,4 +190,23 @@ ubuntu                                           latest    e4c58958181a   6 week
 hello-world                                      latest    9c7a54a9a43c   6 months ago   13.3kB  
 </pre>
 
-E
+## Lab - Creating ubuntu containers and running them in background
+```
+docker run -dit --name ubuntu1 --hostname ubuntu1 ubuntu:latest /bin/bash
+docker run -dit --name ubuntu2 --hostname ubuntu2 ubuntu:latest /bin/bash
+docker ps
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/devops-nov-2023$ docker run -dit --name ubuntu1 --hostname ubuntu1 ubuntu:latest /bin/bash
+4378c8c5913a8b363af6424642b5a4f89a4ceb3c58aa6d3930627572ce84b69c
+jegan@tektutor.org:~/devops-nov-2023$ docker run -dit --name ubuntu2 --hostname ubuntu2 ubuntu:latest /bin/bash
+5072f6e712c38e763b8bccc7a33e89cd7f2e5e8e1de539ec78c994f3cdb4b4c7
+  
+jegan@tektutor.org:~/devops-nov-2023$ docker ps
+CONTAINER ID   IMAGE                                                   COMMAND                  CREATED          STATUS          PORTS                                                           NAMES
+5072f6e712c3   ubuntu:latest                                           "/bin/bash"              3 seconds ago    Up 2 seconds                                                                    ubuntu2
+4378c8c5913a   ubuntu:latest                                           "/bin/bash"              21 seconds ago   Up 20 seconds                                                                   ubuntu1
+99daa08c75be   releases-docker.jfrog.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   23 hours ago     Up 23 hours     0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory  
+</pre>
