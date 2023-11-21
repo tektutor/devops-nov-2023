@@ -358,6 +358,15 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/dba3efab-d834-47d2-84a3-843cca0af57a)
 
 ## Lab - Building C++ project using Maven build tool
+
+#### Installing make and g++
+
+when it prompts for password, type rps@12345 as the admin password.
+```
+sudo apt install -y make g++
+```
+The above should be installed before trying the mvn compile or other mvn commands on this project.
+
 ```
 cd ~/devops-nov-2023
 git pull
@@ -371,4 +380,7 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e85566d9-4019-4b56-a2c8-929ede5a55d3)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fef7b7bb-1d6f-4d28-880e-6a294534f78c)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ae16a18c-a784-4961-bd79-733d39a85682)
+
+## Day1 Feedback
+https://tcheck.co/2nyl2b
 
