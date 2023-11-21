@@ -349,3 +349,18 @@ docker inspect -f {{.NetworkSettings.IPAddress}} web1
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e744f2be-eb39-4efc-a58f-e33ac84070e4)
+
+Let's create 2 more web container and a single lb container using nginx docker image
+```
+docker ps
+docker run -d --name web2 --hostname web2 nginx:latest
+docker run -d --name web3 --hostname web3 nginx:latest
+docker run -d --name lb --hostname lb nginx:latest
+
+docker inspect -f {{.NetworkSettings.IPAddress}} web2
+docker inspect -f {{.NetworkSettings.IPAddress}} web3
+docker inspect -f {{.NetworkSettings.IPAddress}} lb
+```
+
+Expected ouput
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/3e14dd53-38a6-4840-9a31-a67e7699fbc7)
