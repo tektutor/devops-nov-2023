@@ -19,6 +19,17 @@
 - The OS that runs within the Virtual Machine is called Guest OS
 - The OS on which the Hypervisor software is installed in case of Type2 is called Host OS
 - Type 1 Hypervisor doesn't require Host OS
+- Type 1
+  Example - VMWare vCenter/vSphere
+- Type 2
+- Examples
+  - Oracle VirtualBox (Free but not opensource )
+  - VMWare
+    - Fusion ( Mac OS-X )
+    - Workstation ( Windows & Linux )
+  - Microsoft Hyper-V
+  - Parallels ( Mac OS-X )
+  - Opensource KVM ( Linux )
   
 ## What is Docker?
 
