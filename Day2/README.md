@@ -1,5 +1,17 @@
 # Day 2
 
+## Processors Packaging
+- Two types of Packaing
+  1. Single Chip Module (SCM - One IC has one Processor )
+  2. Multiple Chip Module (MCM - One IC will have multiple Processors ) 
+
+## Server Grade Motherboards
+- supports multiple Processor Sockets
+- Assume the Server has 4 Processors Sockets
+- Assume we are installing MCM based Processor, i.e each IC with 4 Processors
+- Assumne each Processor has 256 CPU Cores
+- Total CPU Cores = 16 x 256 = 4096 CPU Cores
+  
 ## What is Hypervisor?
 - virtualization technology
 - allows us to run many Operating System side by side on the same laptop/desktop/workstation/server
@@ -33,8 +45,20 @@
 - The OS that runs with the Virtual Machine (VMs) is a fully functional Operating System
   - it has it own dedicated Hardware resources ( CPU Cores, RAM, Storage, Network, Graphics Card, etc., )
   - Hence the number of Virtual Machines we can create on Laptop/Desktop/Workstation/Server depends on the hardware configuration of that machine
+- Hypervisor is a heavy-weight technology as each VM requires dedicated hardware resources
+
+## What is a Container Technology ?
+- light-weight application virtualization technology
+- container are not OS
+- containers are not equivalent to Virtual Machine
+- each container runs a single application
+- containers does'nt have hardware resources, also they don't have OS Kernel
+- every container has its own dedicated network stack
+- containers also has file-system
+- because containers have network stack, file system, it appears like a OS but technically they are nothing but an application process
 
 ## What is Docker?
+
 
 ## Docker vs Hypervisor
 
