@@ -166,3 +166,28 @@ REPOSITORY                                       TAG       IMAGE ID       CREATE
 releases-docker.jfrog.io/jfrog/artifactory-oss   latest    bace876f17f4   2 weeks ago    2.2GB
 hello-world                                      latest    9c7a54a9a43c   6 months ago   13.3kB  
 </pre>
+
+## Lab - Downloading ubuntu latest docker image from Docker Hub to Local Docker Registry
+```
+docker images
+docker pull ubuntu:latest
+docker images
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/devops-nov-2023$ docker pull ubuntu:latest
+latest: Pulling from library/ubuntu
+aece8493d397: Pull complete 
+Digest: sha256:2b7412e6465c3c7fc5bb21d3e6f1917c167358449fecac8176c6e496e5c1f05f
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
+  
+jegan@tektutor.org:~/devops-nov-2023$ docker images
+REPOSITORY                                       TAG       IMAGE ID       CREATED        SIZE
+releases-docker.jfrog.io/jfrog/artifactory-oss   latest    bace876f17f4   2 weeks ago    2.2GB
+ubuntu                                           latest    e4c58958181a   6 weeks ago    77.8MB
+hello-world                                      latest    9c7a54a9a43c   6 months ago   13.3kB  
+</pre>
+
+E
