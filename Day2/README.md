@@ -378,7 +378,7 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/4f02db42-f8d9-4ec3-bf36-5e3a3394d5a0)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fde39b20-bc16-4e2e-8c33-c34d27cfa5b1)
 
-Customizing the web pages on web1, web2 and web3 container so that differentiate the responses from each web server
+Customizing the web pages on web1, web2 and web3 container so that we can differentiate the responses from each web server
 ```
 cd ~/devops-nov-2023
 git pull
