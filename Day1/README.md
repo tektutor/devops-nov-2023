@@ -381,6 +381,16 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fef7b7bb-1d6f-4d28-880e-6a294534f78c)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ae16a18c-a784-4961-bd79-733d39a85682)
 
+## Lab - Building the multimodule project with multiple java child modules and a cpp module
+```
+cd ~/devops-nov-2023
+git pull
+cd Day1/multi-module-project
+mvn install
+```
+
+Expected output
+
 ## Day1 Feedback
 https://tcheck.co/2nyl2b
 
