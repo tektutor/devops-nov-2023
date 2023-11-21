@@ -108,3 +108,28 @@
 - Every Docker Container runs in a separate namespace
 - Every Docker Container gets an IP Address
 - Each Container represents one application
+
+# Lab Exercises
+
+## Lab - Checking the docker version
+```
+docker --version
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/devops-nov-2023$ docker --version
+Docker version 24.0.5, build 24.0.5-0ubuntu1  
+</pre>
+
+## Lab - Listing the Docker Images from your Local Docker Registry
+```
+docker images
+```
+
+Expected output
+<pre>
+jegan@tektutor.org:~/devops-nov-2023$ docker images
+REPOSITORY                                       TAG       IMAGE ID       CREATED       SIZE
+releases-docker.jfrog.io/jfrog/artifactory-oss   latest    bace876f17f4   2 weeks ago   2.2GB  
+</pre>
