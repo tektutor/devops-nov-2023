@@ -55,3 +55,31 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/dfad3fe6-01f5-4f38-9cfb-858da366118b)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/57903847-9225-4962-8d44-f9f0dc7abec9)
 
+## Lab - Create ansible ubuntu node container using our custom docker image
+Deleting existing containers
+```
+docker rm -f $(docker ps -aq)
+```
+
+Now you may proceed creating the container as shown below
+```
+docker ps -a
+docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-ubuntu-node:latest
+docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ansible-ubuntu-node:latest
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/98b46d29-1d0c-4991-a902-4e3827dd53e5)
+
+## Lab - Checking the SSH connectivity to the newly created ubuntu ansible node containers
+```
+ssh -p 2001 root@localhost
+exit
+ssh -p 2002 root@localhost
+exit
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d67d6151-471f-448a-a664-196b288bc2e6)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/cba2a266-b937-442b-9cc9-c28a089d4a4c)
