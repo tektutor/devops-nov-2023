@@ -1,0 +1,6 @@
+- name: Demonstrates writing a simple ansible playbook
+  gather_facts: no
+  hosts: all
+  tasks:
+  - name: Ping ansible node
+    ping:
