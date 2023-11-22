@@ -188,6 +188,9 @@ Expected output
   - Changing vault password
   - Encrypting a string value as opposed to file
 
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/5e211c6e-9949-460e-a6f6-95273497a2fa)
+
+
 ## Downloading jar file from JFrog Artifactory server using Ansible playbook retrieving credentials from Ansible protected vault file
 
 When it prompts for vault password, type 'Rps@12345' without quotes.
