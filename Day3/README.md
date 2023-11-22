@@ -149,3 +149,15 @@ ansible-playbook ping-playbook.yml
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/5086abbe-7f20-4558-8dab-de132ec8ad03)
+
+## Lab - Installing nginx web server via Ansible playbook
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible
+ansible-playbook install-nginx-playbook.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/90041966-8ec9-4428-8f4c-4980f3dd51f0)
+
