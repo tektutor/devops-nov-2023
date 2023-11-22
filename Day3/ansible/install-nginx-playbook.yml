@@ -3,3 +3,17 @@
   tasks:
   - name: Install nginx web server in Ubuntu
     apt: name=nginx update_cache=yes state=latest
+
+  - name: Create the custom web root folder
+    file: path=/var/html  mode=0777 state=directory
+
+  - name: Configure nginx web server to use our custom folder to serve web pages
+    copy: src=default dest=/etc/nginx/sites-available/default
+
+  - name: Restart the nginx web server
+    shell: service nginx start
+
+  - name: Deploy custom web page
+    copy: src=index.html dest=/var/html/index.html
+
+
