@@ -109,6 +109,10 @@ Expected output
 
 ## Lab - Commonly used ansible ad-hoc commands
 ```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible
+
 ansible -i inventory all -m ping
 ansible all -m ping
 ansible all -m shell -a "uptime"
@@ -119,3 +123,17 @@ ansible all -m setup
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/20e11079-b5a6-463a-be60-ce3176ff1705)
+
+
+## Lab - Understanding inventory groups
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible
+ansible dev -m ping
+ansible qa -m ping
+ansible all -m ping
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/753b867a-dbec-470f-828b-bc6af6a0f6d4)
