@@ -46,7 +46,8 @@ Expected output
 ```
 cd ~/devops-nov-2023
 git pull
-cd Day3/ansible/CustomDockerImage/ubuntu
+cd Day3/ansible/CustomDockerImages/ubuntu
+cp ~/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-ubuntu-node:latest .
 ```
 
