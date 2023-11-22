@@ -162,3 +162,30 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/90041966-8ec9-4428-8f4c-4980f3dd51f0)
 
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/1317edfb-ea7b-4b7e-ba5b-c600730c51d7)
+
+## Lab - Installing nginx web server via Ansible playbook using refactored playbook
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible
+ansible-playbook install-nginx-playbook-refactored.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/41489d8e-e3c1-41bf-9333-09754f2a5a31)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/3f4c9d14-576b-4449-b416-467d13ddfebc)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7f34eeb4-c71e-4d00-88b8-78d09744ce9f)
+
+## Downloading jar file from JFrog Artifactory server using Ansible playbook retrieving credentials from Ansible protected vault file
+
+When it prompts for vault password, type 'Rps@12345' without quotes.
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible
+ansible-playbook download-jar-from-jfrog-artifactory-playbook.yml --ask-vault-pass
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ad0f3e13-1241-4111-94f6-5f1917a3006a)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/892c47aa-04ca-408e-832a-790ce97cfef7)

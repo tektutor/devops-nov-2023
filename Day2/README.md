@@ -109,6 +109,10 @@
 - Every Docker Container gets an IP Address
 - Each Container represents one application
 
+
+## Docker High Level Architecture
+![Docker Architecture](docker-architecture.png)
+
 # Lab Exercises
 
 ## Lab - Checking the docker version
