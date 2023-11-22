@@ -34,3 +34,23 @@ Expected output
 - Ansible is developed using Python by Michael Deehan ( a former employee of Red Hat )
 - Michael Deehan started a company called Ansible Inc, and developed Ansible Core as an Open source project
 - Ansible is agent-less
+
+## Lab - Preparing a Custom Ubuntu Ansible Node Docker Image
+We need to create a SSH key pair for rps user in the lab machine
+```
+ssh-keygen
+```
+Expected output
+
+
+```
+cd ~/devops-nov-2023
+git pull
+cd Day3/ansible/CustomDockerImage/ubuntu
+docker build -t tektutor/ansible-ubuntu-node:latest .
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/dfad3fe6-01f5-4f38-9cfb-858da366118b)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/57903847-9225-4962-8d44-f9f0dc7abec9)
+
