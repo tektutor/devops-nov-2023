@@ -160,7 +160,6 @@ ansible-playbook install-nginx-playbook.yml
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/90041966-8ec9-4428-8f4c-4980f3dd51f0)
-
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/1317edfb-ea7b-4b7e-ba5b-c600730c51d7)
 
 ## Lab - Installing nginx web server via Ansible playbook using refactored playbook
@@ -204,3 +203,12 @@ ansible-playbook download-jar-from-jfrog-artifactory-playbook.yml --ask-vault-pa
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ad0f3e13-1241-4111-94f6-5f1917a3006a)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/892c47aa-04ca-408e-832a-790ce97cfef7)
+
+
+## Lab - Passing extra arguments to Ansible playbook
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible
+ansible-playbook download-jar-from-jfrog-artifactory-playbook.yml -e greeting_msg=Testing
+```
