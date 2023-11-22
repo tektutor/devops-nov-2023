@@ -55,3 +55,13 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/dfad3fe6-01f5-4f38-9cfb-858da366118b)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/57903847-9225-4962-8d44-f9f0dc7abec9)
 
+## Lab - Create ansible ubuntu node container using our custom docker image
+```
+docker ps -a
+docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-ubuntu-node:latest
+docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ansible-ubuntu-node:latest
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/98b46d29-1d0c-4991-a902-4e3827dd53e5)
