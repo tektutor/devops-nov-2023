@@ -400,3 +400,63 @@ curl 172.17.0.4
 
 Expected ouput
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/fd5020bb-a3d3-4ade-b97d-2bb0971e01fa)
+
+Now, let's configure the lb container to work like a Load Balancer. We need to copy the default nginx.conf file present in the lb container to our local machine to configure the file.
+
+Before copying the nginx.conf from devops-nov-2023/Day2/lb folder into the lb container, you need to find the IP addresses of your web1, web2 and web3 container and appropriately configure the nginx.conf with those IPs
+```
+cd ~/devops-nov-2023
+git pull
+cd Day2/lb
+docker cp nginx.conf lb:/etc/nginx/nginx.conf
+```
+
+To apply the config changes, we need to restart the lb container
+```
+docker restart lb
+```
+
+Now you can try accessing the lb container IP address to check if it is working like a load balancer, you need to replace the below IP address with your lb container IP
+```
+http://172.17.0.5
+```
+Try the above from a web browser on the RPS lab machine.
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/8836e8e2-c2b4-41fa-8744-a06fc8ecd85e)
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ce36255e-6b63-47da-9177-d5c3711b6e44)
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d931c09c-752d-431c-bb14-f5467a5765f2)
+
+
+## Lab - Using port-forwarding to expose lb container service to outside world
+We first need to delete the lb container
+```
+docker ps
+docker rm -f lb
+```
+
+We need to create a new lb container with port-forwarding
+```
+docker run -d --name lb --hostname lb -p 9000:80 nginx:latest
+```
+
+Let's copy the nginx.conf to make lb container a load balancer. You need to update the nginx.conf web1, web2 and web3 containers IP addresses with your web1, web2 and web3 IP addresses
+```
+cd ~/devops-nov-2023
+git pull
+cd Day2/lb
+docker cp nginx.conf lb
+docker restart lb
+docker ps
+```
+
+## Lab - Creating a mysql db container
+```
+docker run -d --name db --hostname db mysql:latest
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/a92a38e2-6ab0-4eaf-a1d9-21d3c5312ff3)
