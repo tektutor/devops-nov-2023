@@ -6,16 +6,43 @@
   - greeting_msg: Welcome to DevOps!
   tasks:
   - name: Install nginx web server in Ubuntu
+    when: ansible_distribution == "Ubuntu"
     apt: name=nginx update_cache=yes state=latest
+
+  - name: Install Extra Packages for Enterprise Linux in CentOS 
+    when: ansible_distribution == "CentOS"
+    yum: name=epel-release state=latest
+
+  - name: Install nginx web server in CentOS 
+    when: ansible_distribution == "CentOS"
+    yum: name=nginx state=latest
 
   - name: Create the custom web root folder
     file: path=/var/html  mode=0777 state=directory
 
-  - name: Configure nginx web server to use our custom folder to serve web pages
+  - name: Configure nginx web server to use our custom folder to serve web pages in Ubuntu
+    when: ansible_distribution == "Ubuntu"
     copy: src=default dest=/etc/nginx/sites-available/default
 
-  - name: Restart the nginx web server
+  - name: Configure nginx web server to use our custom folder to serve web pages in CentOS 
+    when: ansible_distribution == "CentOS"
+    copy: src=nginx.conf dest=/etc/nginx/nginx.conf
+
+  - name: Restart the nginx web server in Ubuntu
+    when: ansible_distribution == "Ubuntu"
     shell: service nginx start
+
+  - name: Check if nginx is already running in CentOS 
+    when: ansible_distribution == "CentOS"
+    shell: curl localhost 
+    register: output
+    ignore_errors: true
+
+  - name: Start nginx service if not running already in CentOS
+    when: ( ansible_distribution == "CentOS" and output.rc != 0 )
+    shell: nginx
+
+  - debug: var=output
 
   - name: Retrieve IP address
     shell: hostname -i
@@ -25,5 +52,3 @@
 
   - name: Deploy custom web page
     template: src=index.html.j2 dest=/var/html/index.html
-
-
