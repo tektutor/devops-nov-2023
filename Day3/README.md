@@ -83,3 +83,57 @@ exit
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d67d6151-471f-448a-a664-196b288bc2e6)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/cba2a266-b937-442b-9cc9-c28a089d4a4c)
+
+
+## Lab - Ansible ping
+```
+cd ~/devops-nov-2023
+git pull
+cd Day3/ansible
+ansible -i inventory all -m ping
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/73bf387f-1f3d-4f66-b876-d8f980f88ab2)
+
+
+## Info - What happens when we execute Ansible ad-hoc command
+<pre>
+1. Ansible will fetch the SHH connection details from the inventory and connects to the ansible node via SSH
+2. Ansible creates a tmp directory on the Ansible Controller Machine and similar tmp directory on the Ansible Nodes
+3. Ansible then transpiles the ping.py or respective ansible module, it also embeds all the dependent python code to run the ping.py into the same ping.py ansible module on the local machine in the tmp directory
+4. Ansible will then copy the transpiled ping.py from ACM tmp folder to the Ansible node tmp folder
+5. Ansible then executes the ping.py on the ansible nodes, save the output 
+6. Clean's up the tmp directory and gives summary of the output on the Ansible Controller Machine
+</pre>
+
+## Lab - Commonly used ansible ad-hoc commands
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible
+
+ansible -i inventory all -m ping
+ansible all -m ping
+ansible all -m shell -a "uptime"
+ansible all -m shell -a "hostname -i"
+ansible all -m shell -a "hostname"
+ansible all -m setup
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/20e11079-b5a6-463a-be60-ce3176ff1705)
+
+
+## Lab - Understanding inventory groups
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible
+ansible dev -m ping
+ansible qa -m ping
+ansible all -m ping
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/753b867a-dbec-470f-828b-bc6af6a0f6d4)
