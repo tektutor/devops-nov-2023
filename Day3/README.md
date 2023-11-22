@@ -137,3 +137,15 @@ ansible all -m ping
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/753b867a-dbec-470f-828b-bc6af6a0f6d4)
+
+
+## Lab - Executing your first ansible playbook
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible
+ansible-playbook ping-playbook.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/5086abbe-7f20-4558-8dab-de132ec8ad03)
