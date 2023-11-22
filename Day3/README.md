@@ -83,3 +83,15 @@ exit
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d67d6151-471f-448a-a664-196b288bc2e6)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/cba2a266-b937-442b-9cc9-c28a089d4a4c)
+
+
+## Lab - Ansible ping
+```
+cd ~/devops-nov-2023
+git pull
+cd Day3/ansible
+ansible -i inventory all -m ping
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/73bf387f-1f3d-4f66-b876-d8f980f88ab2)
