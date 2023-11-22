@@ -95,3 +95,14 @@ ansible -i inventory all -m ping
 
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/73bf387f-1f3d-4f66-b876-d8f980f88ab2)
+
+
+## Info - What happens when we execute Ansible ad-hoc command
+<pre>
+1. Ansible will fetch the SHH connection details from the inventory and connects to the ansible node via SSH
+2. Ansible creates a tmp directory on the Ansible Controller Machine and similar tmp directory on the Ansible Nodes
+3. Ansible then transpiles the ping.py or respective ansible module, it also embeds all the dependent python code to run the ping.py into the same ping.py ansible module on the local machine in the tmp directory
+4. Ansible will then copy the transpiled ping.py from ACM tmp folder to the Ansible node tmp folder
+5. Ansible then executes the ping.py on the ansible nodes, save the output 
+6. Clean's up the tmp directory and gives summary of the output on the Ansible Controller Machine
+</pre>
