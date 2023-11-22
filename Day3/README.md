@@ -77,6 +77,7 @@ Expected output
 ssh -p 2001 root@localhost
 exit
 ssh -p 2002 root@localhost
+exit
 ```
 
 Expected output
