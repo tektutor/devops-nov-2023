@@ -106,3 +106,16 @@ Expected output
 5. Ansible then executes the ping.py on the ansible nodes, save the output 
 6. Clean's up the tmp directory and gives summary of the output on the Ansible Controller Machine
 </pre>
+
+## Lab - Commonly used ansible ad-hoc commands
+```
+ansible -i inventory all -m ping
+ansible all -m ping
+ansible all -m shell -a "uptime"
+ansible all -m shell -a "hostname -i"
+ansible all -m shell -a "hostname"
+ansible all -m setup
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/20e11079-b5a6-463a-be60-ce3176ff1705)
