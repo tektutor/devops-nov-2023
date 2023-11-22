@@ -210,5 +210,8 @@ Expected output
 cd ~/dev-nov-2023
 git pull
 cd Day3/ansible
-ansible-playbook download-jar-from-jfrog-artifactory-playbook.yml -e greeting_msg=Testing
+ansible-playbook install-nginx-playbook-refactored.yml -e greeting_msg=Testing
+
+curl http://localhost:8001
+curl http://localhost:8002
 ```
