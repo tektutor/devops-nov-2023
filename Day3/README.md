@@ -56,6 +56,12 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/57903847-9225-4962-8d44-f9f0dc7abec9)
 
 ## Lab - Create ansible ubuntu node container using our custom docker image
+Deleting existing containers
+```
+docker rm -f $(docker ps -aq)
+```
+
+Now you may proceed creating the container as shown below
 ```
 docker ps -a
 docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-ubuntu-node:latest
