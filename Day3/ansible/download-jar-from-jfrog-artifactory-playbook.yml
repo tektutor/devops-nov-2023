@@ -1,0 +1,11 @@
+- name: This playbook will download jar file from JFrog Artifactory server
+  hosts: localhost
+  vars_files:
+  - credentials.yml
+  tasks:
+  - name: Download jar file from JFrog Artifactory server
+    get_url:
+      url: http://localhost:8082/artifactory/tektutor/org/tektutor/hello/1.0.0/hello-1.0.0.jar
+      url_username: "{{username}}" 
+      url_password: "{{password}}" 
+      dest: .
