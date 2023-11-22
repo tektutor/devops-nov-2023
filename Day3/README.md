@@ -176,6 +176,18 @@ Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/3f4c9d14-576b-4449-b416-467d13ddfebc)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7f34eeb4-c71e-4d00-88b8-78d09744ce9f)
 
+## What is Ansible vault?
+- Ansible supports Ansible vault to securely store and retrieve sensitive information like login credentials
+- Ansible vault encrypts the data using AES 256 bit algorithm
+- At runtime, ansible playbooks can securely decrypt if we supply the ansible vault password
+- Ansible vault supports the below features
+  - Creating vault file
+  - Editing vault file
+  - Encrypting already existing files
+  - Decrypting Vault protected files
+  - Changing vault password
+  - Encrypting a string value as opposed to file
+
 ## Downloading jar file from JFrog Artifactory server using Ansible playbook retrieving credentials from Ansible protected vault file
 
 When it prompts for vault password, type 'Rps@12345' without quotes.
