@@ -41,7 +41,7 @@ We need to create a SSH key pair for rps user in the lab machine
 ssh-keygen
 ```
 Expected output
-
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/5cbb7205-100a-444e-a6d7-a8e237eab62a)
 
 ```
 cd ~/devops-nov-2023
