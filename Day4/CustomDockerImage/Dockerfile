@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:latest
 
 RUN apt update && apt install -y software-properties-common 
 RUN add-apt-repository ppa:openjdk-r/ppa -y
