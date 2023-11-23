@@ -22,3 +22,4 @@ It would then ask for installing plugins
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/08ef3275-fbb5-4ec3-8d2f-b338470d417a)
 
 Let's select "Install Suggested Plugins"
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/1a036a2f-dd0f-4ad6-baa8-86f6f19a5ce2)
