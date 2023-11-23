@@ -176,3 +176,20 @@ Click on "Save" button
 - Cloudbees
 - Microsoft Team Foundation Server (TFS)
 
+## Lab - Creating a Maven style Jenkins Job
+
+First navigate to Jenkins Dashboard on your web browser
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7b8b7e8c-706e-4d5d-93ad-a2584f3887d8)
+
+Click on "Create a Job" button
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/b500a2c7-3670-4a63-a3b3-714f8f50c135)
+
+Select "Maven Project" and type "HelloMavenJob" and click on "Ok" button.
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/a1e4c189-5b83-4e45-9411-b5045262b786)
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/41302e87-c062-48fd-8e8e-dabaa3ceb7f4)
+
+The General section looks as below after configuration
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/f2bbb119-66b4-4f3a-9784-df4feb76fb91)
+
+Under the Source Code Management section, select Git
