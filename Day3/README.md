@@ -68,6 +68,7 @@ Deleting existing containers
 docker rm -f $(docker ps -aq)
 ```
 
+
 Now you may proceed creating the container as shown below
 ```
 docker ps -a
@@ -256,6 +257,33 @@ exit
 ```
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6aa47034-6937-4a90-b034-50d5ccd16fa7)
+
+## Lab - Troubleshooting SSH password prompt issue
+Ideally when you attempt to do ssh as shown below, it shouldn't ask for password. If it is asking for password, you can troubleshoot as shown below.
+```
+ssh -p 2003 root@localhost
+```
+
+Steps to fix the issue
+<pre>
+cd ~/devops-nov-2023
+git pull
+cd Day3/ansible/CustomDockerImages/centos
+rm authorized_keys
+cp ~/.ssh/id_rsa.pub authorized_keys
+
+docker rm -f centos1 centos2
+docker build -t tektutor/ansible-centos-node:latest .
+docker images
+
+docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/ansible-centos-node:latest
+docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/ansible-centos-node:latest 
+docker ps
+
+ssh -p 2003 root@localhost
+exit
+ssh -p 2004 root@localhost
+</pre>
 
 ## Lab - Test if centos1 and centos2 containers are pingable by ansible
 ```
