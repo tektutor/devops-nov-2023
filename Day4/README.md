@@ -193,3 +193,7 @@ The General section looks as below after configuration
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/f2bbb119-66b4-4f3a-9784-df4feb76fb91)
 
 Under the Source Code Management section, select Git
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/c28932f1-bb16-4414-a242-c2ccd7b9d1aa)
+
+Build Triggers
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/096c7568-67cc-475b-aa0e-a96de0e925c9)
