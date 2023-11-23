@@ -68,6 +68,8 @@ Deleting existing containers
 docker rm -f $(docker ps -aq)
 ```
 
+Port Forwarding
+![Docker Port Forwarding](PortForwarding.png)
 
 Now you may proceed creating the container as shown below
 ```
