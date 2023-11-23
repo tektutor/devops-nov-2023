@@ -256,3 +256,26 @@ exit
 ```
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6aa47034-6937-4a90-b034-50d5ccd16fa7)
+
+## Lab - Test if centos1 and centos2 containers are pingable by ansible
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible/refactored
+ansible all -m ping
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6af8d3e4-d4df-4926-8c86-fa3b22858515)
+
+## Lab - Execute the refactored install nginx playbook on ubuntu and centos ansible nodes
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible/refactored
+ansible-playbook install-nginx-playbook.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/56cf3918-dd7d-4c5c-b339-b157e3b378eb)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6046f010-646c-4acc-8012-5accbf3949f0)
