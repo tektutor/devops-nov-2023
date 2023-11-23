@@ -94,7 +94,7 @@
 - commonly used by Container Engine to manage containers
 - Examples
   - runC is a Container Runtime used by Docker & Containerd
-  - rkt is Container Runtime used by Podman
+  - CRI-O is Container Runtime used by Podman
 
 ## What is a Docker Image?
 - specification or blueprint of a Container
