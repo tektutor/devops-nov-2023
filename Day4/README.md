@@ -151,6 +151,28 @@ Click on "Add Docker Template"
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d865166d-c504-4a05-afb7-24a15bb625b2)
 Click on "Save" button
 
-
-
+## What is Jenkins?
+- is a build automation server
+- used mainly for CI/CD Builds
+- this was developed in Java by Kohsuke Kawaguchi, former employee of Sun Microsystems
+- Initially it was developed as Hudson is an opensource project
+- Then Oracle acquired Sun Microsystems, then part of Hudson including Kohsuke Kawaguchi had quit Oracle
+  created a new branch from Hudson called Jenkins
+- The other part of the Hudson team they continue to develop the product as Hudson
+- There is lot common code between Hudson and Jenkins
+- More than 10000 active contributors are there for Jenkins
+- Many other software vendors got inspired by Jenkins similar products came out in market like Bamboo, Team City, Microsoft TFS, etc.,
+- Jenkins supports CI/CD build for products built in any software stack
+  
+## What is Cloudbees?
+- Cloudbees is the enterprise paid variant of Jenkins
+- Feature wise Jenkins and Cloudbees pretty much they are same
+- We get support for Cloudbees while we only get community support for Jenkins
+- Cloudbees is more stable as it is a paid version
+  
+## Jenkins Alternatives
+- Bamboo
+- Team City
+- Cloudbees
+- Microsoft Team Foundation Server (TFS)
 
