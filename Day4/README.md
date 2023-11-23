@@ -147,6 +147,9 @@ Click on "Add Docker Template"
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e013bc89-e6c4-45e2-bbe8-190e8735061d)
 
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/f33f37cf-0506-40fe-ac15-448618f55ac1)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7bab6d71-76b8-4207-91e5-44ae4f26e6af)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d865166d-c504-4a05-afb7-24a15bb625b2)
+Click on "Save" button
 
 
 
