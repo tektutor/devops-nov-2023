@@ -155,6 +155,9 @@ Ops
   - when maven conventions are followed with zero to minimum configurations we can create and build projects
   - when we can't follow maven conventions, we need to perform configurations
 
+## Maven High Level Architecture
+![Maven High Level Architecture](MavenHighLevelArchitecture.png)
+
 # Lab Exercises
 
 ## Lab - Cloning the TekTutor Training Repository ( should be done only once )
