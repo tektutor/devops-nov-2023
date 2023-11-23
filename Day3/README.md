@@ -233,12 +233,19 @@ docker build -t tektutor/ansible-centos-node:latest .
 docker images
 ```
 
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/9be20389-0227-4ab1-9ff4-9688423e44d2)
+
+
 ## Lab - Create couple of centos containers using our custom centos image
 ```
 docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/ansible-centos-node:latest
 docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/ansible-centos-node:latest
 docker ps
 ```
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/83763090-4c54-4ad5-9e94-29097e59e960)
+
 
 ## Lab - Verify the centos for SSH connectivity
 ```
@@ -247,3 +254,5 @@ exit
 ssh -p 2004 root@localhost
 exit
 ```
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6aa47034-6937-4a90-b034-50d5ccd16fa7)
