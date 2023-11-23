@@ -35,6 +35,9 @@ Expected output
 - Michael Deehan started a company called Ansible Inc, and developed Ansible Core as an Open source project
 - Ansible is agent-less
 
+
+## Structure of Ansible Playbook
+![Structure of Ansible Playbook](StructureofAnsiblePlaybook.png)
 ## Lab - Preparing a Custom Ubuntu Ansible Node Docker Image
 We need to create a SSH key pair for rps user in the lab machine
 ```
