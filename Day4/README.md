@@ -206,3 +206,35 @@ Click on "Save" button
 Every 2 minutes once Jenkins will poll GitHub devops-nov-2023 code repository for code changes, if it detects code change it will trigger a maven job as shown below.
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/82d85e8c-a7f1-4cc1-8490-f9c7e5eaf2f3)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/927cff79-b9d5-43b7-a3f7-f635d98cfb26)
+
+## Lab - Creating a Freestyle Jenkins Job
+
+Let's navigate to Jenkins Dashboard
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ca61fee4-b107-419a-885f-2e5137d88502)
+
+Click on "New Item"
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/4de0b2b6-0a8d-42e6-853c-a8068ac1e1ec)
+Click on "Ok" button
+
+General Section
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ae2a7ea9-b6dd-4d55-b933-b0f13d8e17d3)
+
+Source Code Management Section
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/590ccf56-2af0-416b-b2ac-9e253d8d1fcf)
+
+Build Triggers Section
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d1f642d3-8435-40fc-8c42-ac176acd6eb0)
+
+Build Steps
+Click on "Add build step" and Select "Execute Shell" option
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d3ec964b-37fd-498d-ade1-33177a14f0f3)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/21bbe149-fd7f-4d28-bcea-b2a1521301b7)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/ee418951-e6f0-49ba-9755-46648c5b027a)
+
+Click on "Save" button
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/b5728efc-49bc-47f8-bda7-7712ccc2bab5)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/654d9eb5-b047-415e-a326-26fb00d72619)
+
+Every 2 minutes it polls GitHub and it will start the build if it detects code change
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7d528130-aad3-4943-a6f1-baacd88e9478)
+
