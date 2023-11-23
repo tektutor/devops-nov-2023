@@ -89,3 +89,17 @@ From your ubuntu terminal, copy the mvn home path
 Click on "Save" button
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/44203be9-50cd-43c2-8afa-35f657bcd038)
 
+Let's navigate to "Manage Jenkins --> Clouds"
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/2857782b-fcd3-47e8-945a-0cbc9a10f378)
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/2c450939-4174-406c-be3d-aa09d916c285)
+Click on "New cloud"
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/9480899e-69e4-4fde-814b-678b68ff75fb)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/2cc19341-116c-41af-bd74-dbe3964d5cda)
+Click on "Create" button
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/b3886349-929b-4a14-9d93-db905f66dfc3)
+
+Click on "Docker cloud details"
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/18e58194-8a83-4758-93a9-6bd8d93099d9)
+
+We need to configure the Docker Service to support REST API access for remote docker clients and for third-party application to interact with Docker service.
