@@ -205,3 +205,4 @@ Click on "Save" button
 
 Every 2 minutes once Jenkins will poll GitHub devops-nov-2023 code repository for code changes, if it detects code change it will trigger a maven job as shown below.
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/82d85e8c-a7f1-4cc1-8490-f9c7e5eaf2f3)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/927cff79-b9d5-43b7-a3f7-f635d98cfb26)
