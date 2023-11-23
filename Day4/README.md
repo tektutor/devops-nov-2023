@@ -200,3 +200,8 @@ Build Triggers
 
 Build
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/5edb30b3-452d-41b3-84b4-758cd71ccd45)
+
+Click on "Save" button
+
+Every 2 minutes once Jenkins will poll GitHub devops-nov-2023 code repository for code changes, if it detects code change it will trigger a maven job as shown below.
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/82d85e8c-a7f1-4cc1-8490-f9c7e5eaf2f3)
