@@ -1,4 +1,4 @@
-# Day4
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/240c088d-9514-4889-a5cc-f013a3b70f90)# Day4
 
 ## Launching Jenkins Build Server
 ```
@@ -110,4 +110,19 @@ sudo systemctl status docker
 ```
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/734f1981-0b84-4788-a050-29bf8f38ab99)
+
+From the above screen, you may copy the path of docker service configuration file
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/eb0fc832-5e90-480f-95b1-b82900831bf5)
+
+Then, let's edit the file /lib/systemd/system/docker.service as an administrator
+```
+sudo vim /lib/systemd/system/docker.service
+```
+In the above file at line number 14 we need to append the below string
+```
+-H tcp://0.0.0.0:4243
+```
+Once the above string is appended it should look as shown below
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e0e406da-8636-423f-bf39-d5be6034c0b5)
+
 
