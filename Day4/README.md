@@ -197,3 +197,6 @@ Under the Source Code Management section, select Git
 
 Build Triggers
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/096c7568-67cc-475b-aa0e-a96de0e925c9)
+
+Build
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/5edb30b3-452d-41b3-84b4-758cd71ccd45)
