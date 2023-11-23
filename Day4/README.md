@@ -57,4 +57,22 @@ Make sure the "Restart option" is select,
 Once the additional plugins are installed and Jenkins is restart, we get to see the below page
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/2c2e4c13-f36a-4cf9-9842-b3ec1489ee01)
 
+Let's type the login credentials and sign in
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/a30628bf-f3b6-48f1-8c89-4ceaba9d15d3)
+
+Let's go to "Manage Jenkins --> Tools"
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/98c12914-c017-42b1-bf97-3c0635265eba)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/be371467-e59b-445d-a4d7-ed2335d2bebd)
+
+Let's add JDK configuration by clicking "Add JDK" button
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/b68b9e2f-632d-4fc5-a7f6-599083c1faa2)
+
+Let's uncheck the "Install JDK" checkbox to get the below screen
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/eb9fe8ff-41d9-4ca6-a9a0-aeab88a9891f)
+
+Using your Ubuntu terminal, check the maven version to copy the JDK path
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7f61567d-5ffe-498f-8da5-ee2e83797150)
+We need to paste the path in Jenkins as shown below
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/5281167d-ea06-4a2c-b922-565438ff32c7)
+
 
