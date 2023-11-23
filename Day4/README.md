@@ -102,4 +102,12 @@ Click on "Create" button
 Click on "Docker cloud details"
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/18e58194-8a83-4758-93a9-6bd8d93099d9)
 
-We need to configure the Docker Service to support REST API access for remote docker clients and for third-party application to interact with Docker service.
+We need to configure the Docker Service to support REST API access for remote docker clients and for third-party application like Jenkins to interact with Docker service.
+
+Let's launch the ubuntu terminal and type the below command
+```
+sudo systemctl status docker
+```
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/734f1981-0b84-4788-a050-29bf8f38ab99)
+
