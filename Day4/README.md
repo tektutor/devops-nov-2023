@@ -238,3 +238,9 @@ Click on "Save" button
 Every 2 minutes it polls GitHub and it will start the build if it detects code change
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7d528130-aad3-4943-a6f1-baacd88e9478)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/627de7a1-55c3-4838-aea0-d3107e855376)
+
+
+## Lab - Using Jenkins Master - Docker Slave configuration
+You need to configure your HelloFreeStyle Job, in the general section Restrict where this project can be run to "docker-slave" from "build-in".
+
+And try building it.
