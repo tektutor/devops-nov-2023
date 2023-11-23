@@ -68,6 +68,9 @@ Deleting existing containers
 docker rm -f $(docker ps -aq)
 ```
 
+Port Forwarding
+![Docker Port Forwarding](PortForwarding.png)
+
 Now you may proceed creating the container as shown below
 ```
 docker ps -a
@@ -222,3 +225,87 @@ ansible-playbook install-nginx-playbook-refactored.yml -e greeting_msg=Testing
 curl http://localhost:8001
 curl http://localhost:8002
 ```
+
+## Lab - Building a custom Centos Ansible node Docker Image
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible/CustomDockerImages/centos
+cp ~/.ssh/id_rsa.pub authorized_keys
+docker build -t tektutor/ansible-centos-node:latest .
+docker images
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/9be20389-0227-4ab1-9ff4-9688423e44d2)
+
+
+## Lab - Create couple of centos containers using our custom centos image
+```
+docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/ansible-centos-node:latest
+docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/ansible-centos-node:latest
+docker ps
+```
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/83763090-4c54-4ad5-9e94-29097e59e960)
+
+
+## Lab - Verify the centos for SSH connectivity
+```
+ssh -p 2003 root@localhost
+exit
+ssh -p 2004 root@localhost
+exit
+```
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6aa47034-6937-4a90-b034-50d5ccd16fa7)
+
+## Lab - Troubleshooting SSH password prompt issue
+Ideally when you attempt to do ssh as shown below, it shouldn't ask for password. If it is asking for password, you can troubleshoot as shown below.
+```
+ssh -p 2003 root@localhost
+```
+
+Steps to fix the issue
+<pre>
+cd ~/devops-nov-2023
+git pull
+cd Day3/ansible/CustomDockerImages/centos
+rm authorized_keys
+cp ~/.ssh/id_rsa.pub authorized_keys
+
+docker rm -f centos1 centos2
+docker build -t tektutor/ansible-centos-node:latest .
+docker images
+
+docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/ansible-centos-node:latest
+docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/ansible-centos-node:latest 
+docker ps
+
+ssh -p 2003 root@localhost
+exit
+ssh -p 2004 root@localhost
+</pre>
+
+## Lab - Test if centos1 and centos2 containers are pingable by ansible
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible/refactored
+ansible all -m ping
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6af8d3e4-d4df-4926-8c86-fa3b22858515)
+
+## Lab - Execute the refactored install nginx playbook on ubuntu and centos ansible nodes
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible/refactored
+ansible-playbook install-nginx-playbook.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/56cf3918-dd7d-4c5c-b339-b157e3b378eb)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6046f010-646c-4acc-8012-5accbf3949f0)
