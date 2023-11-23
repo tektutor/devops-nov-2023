@@ -222,3 +222,15 @@ ansible-playbook install-nginx-playbook-refactored.yml -e greeting_msg=Testing
 curl http://localhost:8001
 curl http://localhost:8002
 ```
+
+## Lab - Building a custom Centos Ansible node Docker Image
+```
+cd ~/dev-nov-2023
+git pull
+cd Day3/ansible/CustomDockerImages/centos
+cp ~/.ssh/id_rsa.pub authorized_keys
+docker build -t tektutor/ansible-centos-node .
+docker images
+```
+
+
