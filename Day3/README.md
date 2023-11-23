@@ -229,8 +229,21 @@ cd ~/dev-nov-2023
 git pull
 cd Day3/ansible/CustomDockerImages/centos
 cp ~/.ssh/id_rsa.pub authorized_keys
-docker build -t tektutor/ansible-centos-node .
+docker build -t tektutor/ansible-centos-node:latest .
 docker images
 ```
 
+## Lab - Create couple of centos containers using our custom centos image
+```
+docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/ansible-centos-node:latest
+docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/ansible-centos-node:latest
+docker ps
+```
 
+## Lab - Verify the centos for SSH connectivity
+```
+ssh -p 2003 root@localhost
+exit
+ssh -p 2004 root@localhost
+exit
+```
