@@ -36,8 +36,12 @@ Expected output
 - Ansible is agent-less
 
 
+## Ansible High-Level Architecture
+![Ansible High Level Architecture](AnsibleHighLevelArchitecture.png)
+
 ## Structure of Ansible Playbook
 ![Structure of Ansible Playbook](StructureofAnsiblePlaybook.png)
+
 ## Lab - Preparing a Custom Ubuntu Ansible Node Docker Image
 We need to create a SSH key pair for rps user in the lab machine
 ```
