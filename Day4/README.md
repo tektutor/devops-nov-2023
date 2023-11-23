@@ -75,4 +75,6 @@ Using your Ubuntu terminal, check the maven version to copy the JDK path
 We need to paste the path in Jenkins as shown below
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/5281167d-ea06-4a2c-b922-565438ff32c7)
 
+Let us scroll down to "Maven Installation"
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/7444d0bd-14b9-4250-9456-16431de7525b)
 
