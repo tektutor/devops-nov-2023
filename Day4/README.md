@@ -86,4 +86,6 @@ From your ubuntu terminal, copy the mvn home path
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/78082eb2-aed7-4b01-afbf-56d71d11a755)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/5c05bd2a-98e4-4562-99da-7e44fe0d98af)
 
+Click on "Save" button
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/44203be9-50cd-43c2-8afa-35f657bcd038)
 
