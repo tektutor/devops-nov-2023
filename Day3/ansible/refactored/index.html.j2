@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>{{greeting_msg}}</title>
+	</head>
+	<body>
+		<h3>Configured by {{conf_mgr_tool}}</h3>
+		<h3>Provisioned by {{provisioner_tool}}</h3>
+		<h3>IP Address - {{ip_addr.stdout}}</h3>
+		<h3>Linux Distribution- {{ansible_distribution}} v{{ansible_distribution_version}}</h3>
+		<h3>OS Family - {{ansible_os_family}}</h3>
+		<h3>Python - v{{ansible_python_version}}</h3>
+		<h3>Package Manager - {{ansible_pkg_mgr}}</h3>
+	</body>
+</html>

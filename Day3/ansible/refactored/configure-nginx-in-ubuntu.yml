@@ -1,0 +1,2 @@
+- name: Configure nginx web server to use our custom folder to serve web pages in Ubuntu
+  copy: src=default dest=/etc/nginx/sites-available/default

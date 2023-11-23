@@ -1,0 +1,9 @@
+- name: Create the custom web root folder
+  file: path=/var/html  mode=0777 state=directory
+
+- name: Retrieve IP address
+  shell: hostname -i
+  register: ip_addr
+
+- name: Deploy custom web page
+  template: src=index.html.j2 dest=/var/html/index.html

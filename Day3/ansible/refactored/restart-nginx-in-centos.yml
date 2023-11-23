@@ -1,0 +1,8 @@
+ - name: Check if nginx is already running in CentOS 
+   shell: curl localhost 
+   register: output
+   ignore_errors: true
+
+ - name: Start nginx service if not running already in CentOS
+   when: ( output.rc != 0 )
+   shell: nginx

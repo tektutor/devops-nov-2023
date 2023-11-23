@@ -1,0 +1,2 @@
+- name: Configure nginx web server to use our custom folder to serve web pages in CentOS 
+  copy: src=nginx.conf dest=/etc/nginx/nginx.conf
