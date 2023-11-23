@@ -125,4 +125,29 @@ In the above file at line number 14 we need to append the below string
 Once the above string is appended it should look as shown below
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e0e406da-8636-423f-bf39-d5be6034c0b5)
 
+To apply the service configuration changes, we need to restart the docker service 
+```
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+sudo sytemctl status docker
+```
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/27fa0696-d1d8-4b3e-8ee5-60e8675867d5)
+
+Now you may proceed with Jenkins configuration
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/2bc64d11-899a-4cd4-83ee-5e790ed4ba77)
+
+Let's test if Jenkins is able to communicate with Docker Server by clicking on "Test Connection" button
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/dfbb9d70-9f78-4575-bd1b-c2f04edd564e)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/8ecee7fa-bc36-4e08-be3b-a80bee973fee)
+
+Let's click on "Docker Agent Templates"
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/85037954-d1b6-4390-9dfa-b26f766d0a3b)
+Click on "Add Docker Template"
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e013bc89-e6c4-45e2-bbe8-190e8735061d)
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/f33f37cf-0506-40fe-ac15-448618f55ac1)
+
+
+
 
