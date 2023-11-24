@@ -87,6 +87,8 @@ Click on "Save" button
 
 
 ## Lab - Creating declarative Pipeline using Jenkinsfile
+In the Manage Jenkins --> Clouds --> docker-slave update the docker image to "tektutor/maven-with-ssh:latest" and save.
+
 Navigate to Jenkins Dashboard
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/f1c9f1fa-0045-42c2-a92c-cdc72ffa5b33)
 
