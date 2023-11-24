@@ -133,3 +133,13 @@ docker logs mysql
 Expected output
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6d170c1e-ba1b-428e-8560-c6b0e39ac39d)
 
+Let's now get inside the mysql db shell, when mysql server prompts for password type 'root@123' without quotes.
+```
+docker exec -it mysql bash
+mysql -u root -p
+SHOW DATABASES;
+CREATE DATABASE tektutor;
+SHOW DATABASES;
+USE tektutor;
+
+```
