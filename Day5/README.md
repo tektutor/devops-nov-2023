@@ -119,7 +119,76 @@ Finally click on "Save" button and wait for the Jenkins to trigger the pipeline 
 
 ## Lab - Setting up CI for mysql db changes using Datical liquibase
 
-et's check the datical liquibase now
+Let's create a mysql db container
+```
+docker run -d --name mysql --hostname mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
+```
+Expected output
+<pre>
+jegan@tektutor:~/devops-june-2023/Day5/datical/db-ci$ docker run -d --name mysql --hostname mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
+2d1d256a3e00104d7410d8f13ff09c8261307fdda6bf3961d18dc64a9e3565b6
+</pre>
+
+
+You may now check if the mysql db container is running
+```
+docker ps
+```
+
+Expected output
+<pre>
+jegan@tektutor:~/devops-june-2023/Day5/datical/db-ci$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                                                  NAMES
+2d1d256a3e00   mysql:latest   "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   mysql
+</pre>
+
+
+Let us get inside the mysql db container, when prompts for password type 'root@123' without quotes
+```
+docker exec -it mysql bash
+mysql -u root -p
+CREATE DATABASE tektutor;
+SHOW DATABASE;
+```
+Expected output
+<pre>
+jegan@tektutor:~/devops-june-2023/Day5/datical/db-ci$ docker exec -it mysql bash
+bash-4.4# mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.33 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE tektutor;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| tektutor           |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+bash-4.4# exit
+exit
+</pre>
+
+Let's check the datical liquibase now
 
 ```
 cd ~/devops-nov-2023
