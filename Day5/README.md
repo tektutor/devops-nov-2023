@@ -116,3 +116,13 @@ Under Script Path you need to provide relative Path for the Jenkinsfile
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d0eb65c9-209d-4866-92fd-ff2bf33592ca)
 
 Finally click on "Save" button and wait for the Jenkins to trigger the pipeline automatically.
+
+## Lab - Setting up CI for mysql db changes using Datical liquibase
+
+Let's create a mysql db container
+```
+docker run -d --name mysql --hostname mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
+```
+
+Expected output
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6f3a4f60-8bc2-42de-81cd-fb5c5684e098)
