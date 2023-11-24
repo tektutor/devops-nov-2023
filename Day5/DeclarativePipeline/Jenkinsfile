@@ -6,7 +6,9 @@ pipeline {
 	agent { label 'built-in' }
 	steps {
 	   dir("Day5/CustomDockerImage") {
+	        sh "cp ~/.ssh/id_rsa.pub authorized_keys"
 		sh "docker build -t tektutor/maven-with-ssh:latest ."
+		sh "rm authorized_keys"
            }
 	}
      }
