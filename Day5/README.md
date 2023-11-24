@@ -50,6 +50,8 @@ Click on "New Node"
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/bc7a0ca2-fda2-4a19-acba-1444ddfff4eb)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/91eb23a6-700f-438b-b10f-fd2912eba383)
 Click on "Create" button
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/65d22c68-1642-48c7-9beb-dab62202620d)
+
 
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6bfb6c1c-c669-4981-8083-c82eabdd82ca)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d1c1c26a-f8ac-4ecd-89f2-3479980863f5)
