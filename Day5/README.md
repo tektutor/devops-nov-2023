@@ -57,7 +57,6 @@ Click on "Create" button
 
 We need to Add Private key as Credential, hence click on "Add" button on the Credentials
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/4aed5f6d-09f9-4905-829a-a7bd37334ab8)
-![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/65d22c68-1642-48c7-9beb-dab62202620d)
 
 Select "Jenkins"
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/14d0e346-97c4-42bc-9ea9-aa0582eebe23)
@@ -79,6 +78,7 @@ Click on "Add" button to save the private key credentials.
 
 Select the Credential you just now added from the Combo box
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/9203d92f-c7ed-478a-a33c-f122f2006587)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/65d22c68-1642-48c7-9beb-dab62202620d)
 
 Under "Host key verification strategy" select "Non verifying Verification Strategy"
 
