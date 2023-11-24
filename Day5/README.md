@@ -84,3 +84,33 @@ Under "Host key verification strategy" select "Non verifying Verification Strate
 Click on "Save" button
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/0fe5c496-bdcc-4ec1-8787-bea2c9269fa9)
 ![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/b2ee1615-b739-48b1-974e-e60f0f766199)
+
+
+## Lab - Creating declarative Pipeline using Jenkinsfile
+Navigate to Jenkins Dashboard
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/f1c9f1fa-0045-42c2-a92c-cdc72ffa5b33)
+
+Click on "New item"
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/2d1b406b-6a9a-4fe2-8c0b-c70331472f17)
+Select Pipeline and give a name for your Pipeline as "Delcarative_pipeline_demo"
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/9525718a-1169-41c5-bf16-6fac51c6f8d0)
+Click on "Ok" button
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/5f1fd9bb-aa8d-4681-adb5-ba965a52ca1d)
+
+Build Triggers
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/e80ab437-4752-488b-8bd6-67f2c1ea24c7)
+
+Pipeline
+Under Definition, select "Pipeline script from SCM" option in the combo box
+Under SCM, select "Git"
+In the Repository URL paste this url "https://github.com/tektutor/devops-nov-2023.git"
+Change Branch Specifier from "*/master" to "*/main" without quotes
+Under Script Path you need to provide relative Path for the Jenkinsfile
+"Day5/DeclarativePipeline/Jenkinsfile"
+
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/0c19e2e1-6763-46c7-b035-73ad6d83e466)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/028002a3-b975-48c3-af4c-9d2cba38965b)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/d0eb65c9-209d-4866-92fd-ff2bf33592ca)
+
+Finally click on "Save" button and wait for the Jenkins to trigger the pipeline automatically.
