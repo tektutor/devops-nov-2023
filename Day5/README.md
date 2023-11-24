@@ -1,5 +1,4 @@
 # Day5
-
 ## Lab - Creating a Custom Docker Image to use as a Jenkins Slave Node
 
 In this exercise, we will learn how to manually add a Jenkins node as Jenkins Slave Node. The Slave machine must have the following tools
