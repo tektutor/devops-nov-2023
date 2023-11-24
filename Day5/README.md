@@ -119,6 +119,8 @@ Finally click on "Save" button and wait for the Jenkins to trigger the pipeline 
 
 ## Lab - Setting up CI for mysql db changes using Datical liquibase
 
+For more details, consult the official liquibase documentation here https://docs.liquibase.com/faq.html
+
 Let's create a mysql db container
 ```
 mkdir -p /tmp/mysql
