@@ -121,8 +121,15 @@ Finally click on "Save" button and wait for the Jenkins to trigger the pipeline 
 
 Let's create a mysql db container
 ```
-docker run -d --name mysql --hostname mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
+mkdir -p /tmp/mysql
+cd /tmp/mysql
+rm -rf *
+
+docker run -d --name mysql --hostname mysql -p 3306:3306 -v /tmp/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
+docker ps
+docker logs mysql
 ```
 
 Expected output
-![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6f3a4f60-8bc2-42de-81cd-fb5c5684e098)
+![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6d170c1e-ba1b-428e-8560-c6b0e39ac39d)
+
