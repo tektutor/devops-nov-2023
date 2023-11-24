@@ -27,7 +27,7 @@ docker ps
 
 Find the IP address of the container
 ```
-docker inspect jenkins_slave | grep 
+docker inspect jenkins_slave | grep IPA
 ```
 
 Check if you are manually able to SSH into the container. In my case the container is 172.17.0.2, you will have to substitute your jenkins_slave container IP below
