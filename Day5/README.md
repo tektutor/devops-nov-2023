@@ -121,15 +121,415 @@ Finally click on "Save" button and wait for the Jenkins to trigger the pipeline 
 
 Let's create a mysql db container
 ```
-mkdir -p /tmp/mysql
-cd /tmp/mysql
-rm -rf *
+docker run -d --name mysql --hostname mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
+```
+Expected output
+<pre>
+jegan@tektutor:~/devops-june-2023/Day5/datical/db-ci$ docker run -d --name mysql --hostname mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
+2d1d256a3e00104d7410d8f13ff09c8261307fdda6bf3961d18dc64a9e3565b6
+</pre>
 
-docker run -d --name mysql --hostname mysql -p 3306:3306 -v /tmp/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
+
+You may now check if the mysql db container is running
+```
 docker ps
-docker logs mysql
 ```
 
 Expected output
-![image](https://github.com/tektutor/devops-nov-2023/assets/12674043/6d170c1e-ba1b-428e-8560-c6b0e39ac39d)
+<pre>
+jegan@tektutor:~/devops-june-2023/Day5/datical/db-ci$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                                                  NAMES
+2d1d256a3e00   mysql:latest   "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   mysql
+</pre>
 
+
+Let us get inside the mysql db container, when prompts for password type 'root@123' without quotes
+```
+docker exec -it mysql bash
+mysql -u root -p
+CREATE DATABASE tektutor;
+SHOW DATABASE;
+```
+Expected output
+<pre>
+jegan@tektutor:~/devops-june-2023/Day5/datical/db-ci$ docker exec -it mysql bash
+bash-4.4# mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.33 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE tektutor;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| tektutor           |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+bash-4.4# exit
+exit
+</pre>
+
+Let's check the datical liquibase now
+
+```
+cd ~/devops-nov-2023
+git pull
+
+cd Day5/datical/db-ci
+cat liquibase.properties
+```
+
+The liquibase.properties file has the mysql connection details and it looks as shown below
+<pre>
+jegan@tektutor:~/devops-nov-2023/Day5/datical/db-ci$ <b>cat liquibase.properties</b>
+changeLogFile: dbchangelog.xml
+url: jdbc:mysql://localhost:3306/tektutor
+username: root
+password: root@123
+</pre>
+
+Any schema changes that we wish to perform, we need to do only via the dbchangelog.xml file. For instance, to create a trainig table with 3 colums, we may create a dbchangelog.xml as shown below
+```
+<?xml version="1.0" encoding="UTF-8"?>  
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+        
+     <changeSet  id="1"  author="Jeganathan Swaminathan">  
+         <createTable  tableName="training">  
+             <column  name="id"  type="int">  
+                 <constraints  primaryKey="true"  nullable="false"/>  
+             </column>  
+             <column  name="name"  type="varchar(200)">  
+                 <constraints  nullable="false"/>  
+             </column>  
+             <column  name="duration"  type="varchar(200)"/>  
+         </createTable>  
+    </changeSet>  
+</databaseChangeLog>
+```
+
+In order to apply the table schema changes, you may run the below command
+```
+cd ~/devops-nov-2023/Day5/datical/db-ci
+
+mvn liquibase:update
+```
+Expected output
+<pre>
+jegan@tektutor:~/devops-nov-2023/Day5/datical/db-ci$ mvn liquibase:update
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.tektutor:tektutor-java-app >-------------------
+[INFO] Building tektutor-java-app 1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- liquibase-maven-plugin:4.22.0:update (default-cli) @ tektutor-java-app ---
+[INFO] ------------------------------------------------------------------------
+[INFO] there are no resolved artifacts for the Maven project.
+[INFO] there are no resolved artifacts for the Maven project.
+[INFO] Parsing Liquibase Properties File
+[INFO]   File: liquibase.properties
+[INFO] ------------------------------------------------------------------------
+[INFO] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 15:53:32 (version 4.22.0 #9559 built at 2023-05-10 20:45+0000)
+[INFO] Parsing Liquibase Properties File liquibase.properties for changeLog parameters
+[INFO] Executing on Database: jdbc:mysql://localhost:3306/tektutor
+[INFO] Successfully acquired change log lock
+[INFO] Creating database history table with name: DATABASECHANGELOG
+[INFO] Reading from DATABASECHANGELOG
+[INFO] Using deploymentId: 6306214275
+[INFO] Reading from DATABASECHANGELOG
+Running Changeset: dbchangelog.xml::1::Jeganathan Swaminathan
+[INFO] Table training created
+[INFO] ChangeSet dbchangelog.xml::1::Jeganathan Swaminathan ran successfully in 25ms
+[INFO] UPDATE SUMMARY
+[INFO] Run:                          1
+[INFO] Previously run:               0
+[INFO] Filtered out:                 0
+[INFO] -------------------------------
+[INFO] Total change sets:            1
+
+
+UPDATE SUMMARY
+Run:                          1
+Previously run:               0
+Filtered out:                 0
+-------------------------------
+Total change sets:            1
+
+[INFO] Update summary generated
+[INFO] Update command completed successfully.
+Liquibase: Update has been successful.
+[INFO] Successfully released change log lock
+[INFO] Successfully released change log lock
+[INFO] Command execution complete
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.046 s
+[INFO] Finished at: 2023-06-09T15:53:34+05:30
+[INFO] ------------------------------------------------------------------------
+</pre>
+
+The liquibase will grab the mysql connection details from the liquibase.properties file and connects to our tektutor database with mysql server and applies the changeset defined in the dbchangelog.xml file.
+
+The pom.xml file points to the liquibase.properites and the liquibase.properites file points to dbchangelog.xml file. This is how, liquibase learns about these files.
+
+You may now verify, if the changes are done in your mysql server
+<pre>
+jegan@tektutor:~/devops-nov-2023/Day5/datical/db-ci$ docker exec -it mysql bash
+bash-4.4# mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.33 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE tektutor;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES;
++-----------------------+
+| Tables_in_tektutor    |
++-----------------------+
+| DATABASECHANGELOG     |
+| DATABASECHANGELOGLOCK |
+| training              |
++-----------------------+
+3 rows in set (0.01 sec)
+
+mysql> DESCRIBE training;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| id       | int          | NO   | PRI | NULL    |       |
+| name     | varchar(200) | NO   |     | NULL    |       |
+| duration | varchar(200) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+bash-4.4# exit
+exit
+</pre>
+
+Assuming, you wish to add 2 more columns to the training table on tektutor database. We can update the dbchangelog.xml file as shown below
+```
+<?xml version="1.0" encoding="UTF-8"?>  
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+     <changeSet  id="1"  author="Jeganathan Swaminathan">  
+         <createTable  tableName="training">  
+             <column  name="id"  type="int">  
+                 <constraints  primaryKey="true"  nullable="false"/>  
+             </column>  
+             <column  name="name"  type="varchar(200)">  
+                 <constraints  nullable="false"/>  
+             </column>  
+             <column  name="duration"  type="varchar(200)"/>  
+         </createTable>  
+    </changeSet>  
+    <changeSet  id="2"  author="Jeganathan Swaminathan">  
+         <addColumn tableName="training">  
+             <column  name="from_date"  type="varchar(200)"/>  
+             <column  name="to_date"  type="varchar(200)"/>  
+	 </addColumn>
+    </changeSet>  
+</databaseChangeLog>
+```
+
+You may now update the liquibase as shown below
+```
+cd ~/devops-nov-2023/Day5/datical/db-ci
+mvn liquibase:update
+```
+
+Expected output
+<pre>
+jegan@tektutor:~/devops-nov-2023/Day5/datical/db-ci$ mvn liquibase:update
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.tektutor:tektutor-java-app >-------------------
+[INFO] Building tektutor-java-app 1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- liquibase-maven-plugin:4.22.0:update (default-cli) @ tektutor-java-app ---
+[INFO] ------------------------------------------------------------------------
+[INFO] there are no resolved artifacts for the Maven project.
+[INFO] there are no resolved artifacts for the Maven project.
+[INFO] Parsing Liquibase Properties File
+[INFO]   File: liquibase.properties
+[INFO] ------------------------------------------------------------------------
+[INFO] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 15:55:46 (version 4.22.0 #9559 built at 2023-05-10 20:45+0000)
+[INFO] Parsing Liquibase Properties File liquibase.properties for changeLog parameters
+[INFO] Executing on Database: jdbc:mysql://localhost:3306/tektutor
+[INFO] Successfully acquired change log lock
+[INFO] Reading from DATABASECHANGELOG
+[INFO] Using deploymentId: 6306347311
+[INFO] Reading from DATABASECHANGELOG
+Running Changeset: dbchangelog.xml::2::Jeganathan Swaminathan
+[INFO] Columns from_date(varchar(200)),to_date(varchar(200)) added to training
+[INFO] ChangeSet dbchangelog.xml::2::Jeganathan Swaminathan ran successfully in 29ms
+[INFO] UPDATE SUMMARY
+[INFO] Run:                          1
+[INFO] Previously run:               1
+[INFO] Filtered out:                 0
+[INFO] -------------------------------
+[INFO] Total change sets:            2
+
+
+UPDATE SUMMARY
+Run:                          1
+Previously run:               1
+Filtered out:                 0
+-------------------------------
+Total change sets:            2
+
+[INFO] Update summary generated
+[INFO] Update command completed successfully.
+Liquibase: Update has been successful.
+[INFO] Successfully released change log lock
+[INFO] Successfully released change log lock
+[INFO] Command execution complete
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.912 s
+[INFO] Finished at: 2023-06-09T15:55:47+05:30
+[INFO] ------------------------------------------------------------------------
+</pre>
+
+You may now verify if the schema changes are applied
+<pre>
+jegan@tektutor:~/devops-nov-2023/Day5/datical/db-ci$ docker exec -it mysql bash
+bash-4.4# mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.33 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE tektutor;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES;
++-----------------------+
+| Tables_in_tektutor    |
++-----------------------+
+| DATABASECHANGELOG     |
+| DATABASECHANGELOGLOCK |
+| training              |
++-----------------------+
+3 rows in set (0.01 sec)
+
+mysql> DESCRIBE training;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| id        | int          | NO   | PRI | NULL    |       |
+| name      | varchar(200) | NO   |     | NULL    |       |
+| duration  | varchar(200) | YES  |     | NULL    |       |
+| from_date | varchar(200) | YES  |     | NULL    |       |
+| to_date   | varchar(200) | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+bash-4.4# exit
+exit
+</pre>
+
+For official documentation about liquibase, you may check here
+https://docs.liquibase.com/faq.html
+
+
+## Post test link for DevOps CI-CD training
+https://app.mymapit.in/code4/tiny/S2qsFM
+
+## Feedback link :
+https://tcheck.co/2nSLRb
