@@ -20,4 +20,10 @@
              <column  name="duration"  type="varchar(200)"/>  
          </createTable>  
     </changeSet>  
+    <changeSet id="2" author="Jeganathan Swaminathan">
+	    <addColumn tableName="training">
+		    <column name="from_date" type="varchar(200)"/>
+		    <column name="to_date" type="varchar(200)"/>
+	    </addColumn>
+    </changeSet>
 </databaseChangeLog>
